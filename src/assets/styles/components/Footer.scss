@@ -1,3 +1,20 @@
-footer{
-    background-color: #8fbfd5;
+@import './Globales.scss';
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px inset get-opacity($color-black, 0.7);
+  height: 70px;
+  background-color: $background-footer;
+    ul {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      li {
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+      }
+    }
 }
