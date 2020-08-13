@@ -1,40 +1,62 @@
 import React from 'react';
-
-import '../assets/styles/components/CardOption.scss';
 import IconHeart from '../assets/img/heart.png';
 import IconStar from '../assets/img/star.png';
+import '../assets/styles/components/CardOption.scss';
 
-class CardOption extends React.Component {
-  render() {
-    const { eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = this.props;
-    return (
-      <div className='cardOption'>
+const CardOption = ({ item }) => {
+  const { eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
+  return (
+    <div className='cardOption'>
+      <div className='cardOption__container'>
         <a className='cardOption__link' href={eventLocale}>
           <img src={eventUrlImage} alt='Imagen de Evento' />
         </a>
         <div className='cardOption__details'>
           <div className='cardOption__details--left'>
             <p>
-              Estadía opcional (
-              {eventDisponibility}
-              )
+              Estadía opcional
+              <span> ({eventDisponibility})</span>
             </p>
-            <a href={eventLocale}><h2>{eventTitle}</h2></a>
-            <h3>{eventDetails}</h3>
-            <span><img src={IconStar} alt='Icono de calificación' /> 5.0(235)</span>
+            <a href={eventLocale}>
+              <h2>{eventTitle}</h2>
+            </a>
           </div>
           <img src={IconHeart} alt='icono de favoritos.' />
+          <div className='cardOption__details--center'>
+            <p>{eventDetails}</p>
+          </div>
           <div className='cardOption__details--right'>
-            <h3>
-              <span>${pricePeople} COP </span>por persona
-            </h3>
-            <h3><span>${priceLocation} COP</span> (Estadía opcional)
-            </h3>
+            <div className='star-rating'>
+              <figure>
+                <img src={IconStar} alt='Icono de calificación' />
+              </figure>
+              <span> 5.0 (235) </span>
+            </div>
+            <div>
+              {pricePeople ? (
+                <h3>
+                  <span>
+                    {pricePeople}
+                    COP
+                  </span>
+                  por persona
+                </h3>
+              ) : null}
+              {priceLocation ? (
+                <h3>
+                  <span>
+                    {priceLocation}
+                    COP
+                  </span>
+                  (Estadía opcional)
+                </h3>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default CardOption;

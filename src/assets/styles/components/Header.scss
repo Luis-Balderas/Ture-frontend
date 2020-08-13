@@ -1,22 +1,24 @@
-.header{
+.header {
     background-color: white;
     display: flex;
-    height: 70px;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.brand{
+.brand {
     display: flex;
     text-decoration: none;
     color: black;
+
     &__logo {
-    margin:15px;
-    width: 40px;
-    height: 40px;
+        margin: 15px;
+        width: 40px;
+        height: 40px;
     }
+
     & h1 {
         margin: auto 0;
     }
@@ -25,35 +27,39 @@
 .search {
     padding: 5px;
     display: flex;
-    // width: 45%;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     border: 2px solid rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    border-radius: 25px;
-    &__input{
+    border-radius: 20px;
+
+    &__input {
         display: flex;
         align-items: center;
         justify-content: space-around;
         padding: 0 20px;
         border-right: 1px solid gray;
+
+
         & img {
-            width: 30px;
-            margin-right: 5px;;
-            border-radius: 40%;
+            width: 25px;
+            margin-right: 5px;
             cursor: pointer;
         }
+
         & input {
             border: none;
-            width: 80px;
+            width: 150px;
             padding: 5px
         }
     }
+
     &__date {
         border-right: 1px solid gray;
         padding: 0 20px;
         cursor: pointer;
     }
+
     &__category {
         padding: 0 20px;
         cursor: pointer;
@@ -64,6 +70,7 @@
     display: flex;
     align-items: center;
     margin: 0;
+
     &-btn {
         font-style: normal;
         font-weight: bold;
@@ -75,10 +82,12 @@
         border-radius: 10px;
         background-color: #ff5a5f;
         cursor: pointer;
+
         &:hover {
             box-shadow: 0px 4px 4px #afa8a9;
         }
-        & p{
+
+        & p {
             margin: 0;
         }
     }

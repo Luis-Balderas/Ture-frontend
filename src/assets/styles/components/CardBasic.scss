@@ -3,31 +3,35 @@
 .card {
   max-width: 431px;
   height: 284px;
-  margin: 0 auto;
+  margin: 10px auto;
   border-radius: 20px;
   overflow: hidden;
   background-color: get-opacity($color-gray, 0.8);
   box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
+
   &__details {
     color: $color-black;
     text-decoration: none;
     cursor: pointer;
+
     img {
       width: 100%;
       height: 199px;
       object-fit: cover;
     }
+
     &--title {
       padding: 3px 20px;
       margin: 3px 0;
-      font-family: $fuente-primaria;
+      font-family: $font-primary;
       font-size: $title-card-size;
       font-weight: bold;
     }
+
     &--description {
       margin-top: 8px;
       margin-left: 20px;
-      font-family: $fuente-secundaria;
+      font-family: $font-secundary;
       font-size: $description-card-size;
       font-weight: 400;
     }
