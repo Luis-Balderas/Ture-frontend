@@ -2,28 +2,38 @@
 
 $color-main: #FF5A5F;
 $color-black: #000000;
-$color-claro: #ffffff;
+$color-white: #ffffff;
 $color-gray: #d9d9d9;
 $background-footer: #f7f7f7;
 $description-card-size: 14px;
 $title-card-size: 20px;
-$fuente-primaria: 'Nunito', sans-serif;
-$fuente-secundaria: 'Roboto', sans-serif;
+$font-primary: 'Nunito',
+sans-serif;
+$font-secundary: 'Roboto',
+sans-serif;
 
 @function get-opacity($color, $weight) {
-  @return rgba($color, $weight);
+    @return rgba($color, $weight);
 }
 
-body{
+* {
     padding: 0;
     margin: 0;
+    font-family: $font-primary;
+    box-sizing: border-box;
+
+}
+
+body {
     height: 100%;
 }
-h1{
+
+h1 {
     margin: 0;
     padding: 0;
 }
-main{
+
+main {
     background-color: #8f9cd5;
     height: 100%;
 }

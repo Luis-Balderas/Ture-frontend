@@ -3,18 +3,21 @@
 footer {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   border-top: 2px inset get-opacity($color-black, 0.7);
   height: 70px;
   background-color: $background-footer;
-    ul {
-      padding-left: 0;
-      list-style: none;
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+
+    li {
+      margin: 0 10px;
       display: flex;
-      li {
-        margin: 0 10px;
-        display: flex;
-        align-items: center;
-      }
+      align-items: center;
     }
+  }
 }
