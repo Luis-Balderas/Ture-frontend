@@ -3,7 +3,11 @@
 .carousel {
   display: flex;
 
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+
   figure {
-    width: 350px;
+    // width: 200px;
   }
 }

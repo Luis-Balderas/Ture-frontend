@@ -3,16 +3,32 @@
 .event_details {
   padding: 20px 40px;
   display: grid;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 0.6fr 1fr;
   align-content: space-between;
   gap: 20px;
 
+  @media (max-width: 768px) {
+    grid-template-rows: 0.2fr 1fr;
+  }
+
+  @media (max-width: 420px) {
+    padding: 10px;
+  }
 
   &__container {
     display: grid;
     grid-template-columns: 65% 35%;
-    grid-template-rows: 1fr;
     gap: 20px;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: end;
+    }
+
+    &--description {
+      align-self: baseline;
+    }
   }
 }

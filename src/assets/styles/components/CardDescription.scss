@@ -4,6 +4,10 @@
   display: grid;
   grid-template-rows: 20% 20% 60%;
 
+  @media (max-width: 500px) {
+    grid-template-rows: 15% 10% 75%;
+  }
+
   &__head {
     display: flex;
     flex-wrap: wrap;

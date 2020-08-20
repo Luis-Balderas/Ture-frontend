@@ -10,9 +10,6 @@ const Carousel = () => {
       <figure>
         <img src='https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg' alt='MDN' />
       </figure>
-      <figure>
-        <img src='https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg' alt='MDN' />
-      </figure>
     </section>
   );
 };

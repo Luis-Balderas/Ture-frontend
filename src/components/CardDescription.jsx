@@ -37,10 +37,6 @@ const CardDescription = () => {
             molestias aperiam fuga repudiandae, laboriosam quidem error rerum laudantium ab ipsum cupiditate vel inventore qui consectetur
             voluptatum temporibus dolorum.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolorem explicabo veniam! Dolores perspiciatis expedita, dolorum
-            veritatis qui quo blanditiis? A necessitatibus ipsam harum obcaecati repudiandae, velit animi id quibusdam.
-          </p>
         </div>
       </div>
     </section>
