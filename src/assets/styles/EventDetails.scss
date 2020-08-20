@@ -1,0 +1,20 @@
+@import './components/Globales.scss';
+
+.event_details {
+  padding: 20px 40px;
+  display: grid;
+  grid-template-rows: 30% 70%;
+  align-content: space-between;
+  height: 100vh;
+  gap: 20px;
+
+  &__carousel {}
+
+  &__container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}

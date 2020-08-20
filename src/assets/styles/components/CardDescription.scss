@@ -1,0 +1,51 @@
+@import './Globales.scss';
+
+.description {
+  display: grid;
+  grid-template-rows: 20% 20% 60%;
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-black;
+    margin-bottom: 10px;
+
+    &--title_event,
+    &--date {
+      display: flex;
+      margin-right: 40px;
+      align-items: center;
+
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+
+    figure {
+      width: 25px;
+      height: 25px;
+      margin-right: 20px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .location {
+      font-weight: 700;
+    }
+
+  }
+
+  &__detail {
+    &--txt {
+      text-align: center;
+    }
+  }
+}

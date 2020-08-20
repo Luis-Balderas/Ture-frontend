@@ -1,0 +1,70 @@
+@import './Globales.scss';
+
+.payment {
+  background-color: $color-gray;
+  border: 1px solid $color-black;
+  border-radius: 20px;
+
+  &__container {
+    padding: 20px;
+  }
+
+  &__head {
+    display: flex;
+
+    p,
+    span {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  &__card {
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px auto;
+    width: 90%;
+
+    &--head {
+      display: grid;
+      grid-template: 1fr / 1fr;
+
+      .title,
+      .txt {
+        display: flex;
+        justify-content: space-around;
+
+        h5,
+        p {
+          padding: 5px;
+        }
+      }
+
+      .title {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          border-right: 1px solid;
+          width: 20px;
+          height: 65px;
+        }
+      }
+    }
+
+    &--main {
+      border-top: 1px solid;
+      padding: 10px;
+      padding-left: 20px;
+
+      .input-range {
+        width: 50px;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+
+  }
+}
