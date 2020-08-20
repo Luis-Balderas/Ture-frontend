@@ -1,4 +1,4 @@
-@import './Globales.scss';
+@import '../vars';
 
 .payment {
   background-color: $color-gray;
@@ -62,9 +62,52 @@
         width: 50px;
         border: none;
         padding: 5px;
-        border-radius: 5px;
+        border-radius: 6px;
       }
     }
 
+  }
+
+  &__details {
+    padding: 10px;
+
+    &--price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 5px;
+
+      .value {
+        font-weight: 700;
+      }
+
+      &.total {
+        border-top: 1px solid #000;
+        padding-top: 15px;
+      }
+    }
+
+    &--btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+
+      button {
+        font-weight: bold;
+        color: white;
+        width: 150px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #ff5a5f;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0px 4px 4px #afa8a9;
+        }
+      }
+
+    }
   }
 }

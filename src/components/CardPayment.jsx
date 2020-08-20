@@ -3,7 +3,9 @@ import '../assets/styles/components/CardPayment.scss';
 
 const CardPayment = () => {
   const [name, setName] = useState('');
-  console.log('CardPayment -> name', name);
+  const value = 180000;
+  const porcentage = 0.1;
+  const tarifa = 26000;
 
   const handleSubmit = (evt) => {
     console.log('handleSubmit -> evt', evt);
@@ -15,7 +17,7 @@ const CardPayment = () => {
     <section className='payment'>
       <div className='payment__container'>
         <div className='payment__head'>
-          <p>$180000</p>
+          <p>${value}</p>
           <span>/ persona</span>
         </div>
         <div className='payment__card'>
@@ -37,17 +39,30 @@ const CardPayment = () => {
           </div>
         </div>
         <div className='payment__details'>
-          <div className='payment__details__price'>
-            <p>$180000 x {name || 1} boletas </p>
-            <p>${180000 * (name || 1)}</p>
+          <div className='payment__details--price'>
+            <p>
+              ${value} x {name || 1} boletas{' '}
+            </p>
+            <p className='value'>${value * (name || 1)}</p>
           </div>
-          <div className='payment__details__price'>
-            <p>$180000 x {name || 1} boletas </p>
-            <p>${180000 * (name || 1)}</p>
+          <div className='payment__details--price'>
+            <p>IVA(10%)</p>
+            <p className='value'>${value * (name || 1) * porcentage}</p>
           </div>
-          <div className='payment__details__price'>
-            <p>$180000 x {name || 1} boletas </p>
-            <p>${180000 * (name || 1)}</p>
+          <div className='payment__details--price'>
+            <p>Valor con IVA</p>
+            <p className='value'>${value * (name || 1) + value * (name || 1) * porcentage}</p>
+          </div>
+          <div className='payment__details--price'>
+            <p>Valor con IVA</p>
+            <p className='value'>$26000</p>
+          </div>
+          <div className='payment__details--price total'>
+            <p>Total</p>
+            <p className='value'>${value * (name || 1) + value * (name || 1) * porcentage + tarifa}</p>
+          </div>
+          <div className='payment__details--btn'>
+            <button type='submit'>Reservar</button>
           </div>
         </div>
       </div>

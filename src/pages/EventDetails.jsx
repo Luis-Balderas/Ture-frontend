@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/EventDetails.scss';
+import '../assets/styles/pages/EventDetails.scss';
 import CardDescription from '../components/CardDescription';
 import CardPayment from '../components/CardPayment';
 import Carousel from '../components/Carousel';
