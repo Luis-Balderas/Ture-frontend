@@ -6,8 +6,6 @@ import NotFound from '../components/NotFound';
 import Home from './Home';
 import EventOption from './Events';
 
-import '../assets/styles/components/Globales.scss';
-
 function App() {
   return (
     <BrowserRouter>

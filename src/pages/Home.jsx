@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/Home.scss';
+import '../assets/styles/pages/Home.scss';
 import CardBasic from '../components/CardBasic';
 import CardOption from '../components/CardOption';
 

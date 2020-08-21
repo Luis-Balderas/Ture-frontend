@@ -1,0 +1,13 @@
+@import '../vars';
+
+.carousel {
+  display: flex;
+
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+
+  figure {
+    // width: 200px;
+  }
+}
