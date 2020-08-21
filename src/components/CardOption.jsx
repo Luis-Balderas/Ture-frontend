@@ -14,11 +14,10 @@ const CardOption = ({ item }) => {
         <div className='cardOption__details'>
           <div className='cardOption__details--left'>
             <p>
-              Estadía opcional
-              <span> ({eventDisponibility})</span>
+              <small>Estadía opcional ({eventDisponibility})</small>
             </p>
             <a href={eventLocale}>
-              <h2>{eventTitle}</h2>
+              <h5>{eventTitle}</h5>
             </a>
           </div>
           <img src={IconHeart} alt='icono de favoritos.' />

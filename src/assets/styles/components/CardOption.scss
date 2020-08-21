@@ -1,18 +1,19 @@
 @import './Globales.scss';
 
 .cardOption {
-
+  padding: 20px 0;
+  border-bottom: 2px solid $color-black;
+  margin-left: 40px;
   &__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
   }
 
   &__link {
     color: $color-black;
 
     img {
-      width: 100%;
+      width: 90%;
       border-radius: 20px;
     }
   }
@@ -33,10 +34,9 @@
       a {
         font-family: $font-primary;
         text-decoration: none;
-        font-size: $title-card-size;
         color: $color-black;
 
-        h2 {
+        h5 {
           font-weight: bold;
           margin: 20px 0;
         }

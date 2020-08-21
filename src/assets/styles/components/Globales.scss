@@ -16,6 +16,12 @@ sans-serif;
     @return rgba($color, $weight);
 }
 
+@each $text, $size in (h1: 40px, h3: 30px, h5: 20px, p: 14px, small: 12px) {
+  #{$text} {
+    font-size: $size;
+  }
+}
+
 * {
     padding: 0;
     margin: 0;
