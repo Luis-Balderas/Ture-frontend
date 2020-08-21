@@ -25,6 +25,7 @@
   ],
   "rules": {
     "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": "off",
     "array-bracket-spacing": 2,
     "arrow-body-style": 0,
     "block-scoped-var": 2,
