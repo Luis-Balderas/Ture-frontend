@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from '../components/Layout';
 import NotFound from '../components/NotFound';
-import EventDetails from './EventDetails';
-import Home from './Home';
+import EventDetails from '../pages/EventDetails';
+import Home from '../pages/Home';
 
 const App = () => (
   <BrowserRouter>
