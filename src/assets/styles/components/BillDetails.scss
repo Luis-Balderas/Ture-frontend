@@ -1,0 +1,50 @@
+@import '../Globales.scss';
+.card {
+  width:  100%;
+  height: min-content;
+  margin: auto 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: get-opacity($color-gray, 0.8);
+  box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
+
+    & img {
+      width: 100%;
+      height: 199px;
+      object-fit: cover;
+    }
+
+    &__details {
+        padding: 20px 30px;
+
+        &--total{
+            display: grid;
+            grid-template-columns: repeat(2,  1fr);
+            text-align: center;
+        }
+
+        & span {
+            padding: 15px 0;
+        }
+        h5 {
+            margin: 5px 0;
+        }
+    }
+
+//     &--title {
+//       padding: 3px 20px;
+//       margin: 3px 0;
+//       font-family: $font-primary;
+//       font-size: $title-card-size;
+//       font-weight: bold;
+//     }
+
+//     &--description {
+//       margin-top: 8px;
+//       margin-left: 20px;
+//       font-family: $font-secundary;
+//       font-size: $description-card-size;
+//       font-weight: 400;
+//     }
+//   }
+}

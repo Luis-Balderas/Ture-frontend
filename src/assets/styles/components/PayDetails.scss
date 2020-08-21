@@ -1,0 +1,87 @@
+.PayDetails {
+    display: grid;
+    grid-template-rows: 10% 90%;
+//   background-color: get-opacity($color-gray, 0.8);
+//   box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
+    align-items: start;
+    box-sizing: content-box;;
+    
+    & > span {
+        grid-column: 1 / -1;
+    }
+    & h4 {
+      margin: 0;
+      padding: 0 0 17px;
+      border-bottom: 1px solid black;
+    }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    &--pay {
+       grid-column: 1 / -1;
+    }
+    &--button{
+        display: flex;
+        justify-content: flex-end;
+        grid-column: 2 / -1;
+        & button {
+           font-style: normal;
+          font-weight: bold;
+          line-height: 21px;
+          color: white;
+          margin: 10px;
+          padding: 10px;
+          border: none;
+          border-radius: 10px;
+          background-color: #ff5a5f;
+          cursor: pointer;
+          & p{
+          margin: 0;
+          }
+        }
+    }
+    &--pay1 {
+      display: flex;
+      // justify-content: flex-start;
+      // align-items: center;
+      padding: 10px 15px;
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      box-sizing: border-box;
+      border-radius: 10px;
+      grid-column: 1/ -1;
+    }
+    &--pay2 {
+      padding: 10px 15px;
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      box-sizing: border-box;
+      border-radius: 10px;
+      grid-column: 1/ -1;
+    }
+  }
+  & p {
+      margin: 12px 0;
+      font-weight: bold;
+  }
+
+  & input {
+      width: 100%;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      box-sizing: border-box;
+      border-radius: 10px;
+  }
+
+//   &__name{
+//      grid-column: 1/2;
+//   }
+//   &__lastName{
+//       grid-column: 2/-1;
+//   }
+}
+
+// .btnContainer-btn{
+//     width: 100%;
+// }
