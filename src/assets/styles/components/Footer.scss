@@ -18,6 +18,10 @@ footer {
       margin: 0 10px;
       display: flex;
       align-items: center;
+      a {
+        text-decoration: none;
+        color: $color-black;
+      }
     }
   }
 }

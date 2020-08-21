@@ -11,20 +11,17 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  devServer: {
-    historyApiFallback: true,
-  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
       },
       {
-        test: /\.html$/,
+        test: /.html$/,
         use: [
           {
             loader: 'html-loader',
@@ -32,7 +29,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(s*)css$/,
+        test: /.(s*)css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -42,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpg)$/,
+        test: /.(png|gif|jpg)$/,
         use: [
           {
             loader: 'file-loader',
@@ -53,6 +50,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
