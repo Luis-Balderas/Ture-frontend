@@ -1,0 +1,84 @@
+.card-Inicio{
+    display: grid;
+    justify-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.registro-Conteiner{
+    display: grid;
+    justify-items: center;
+    border: 1px solid black;
+    width: 450px;
+    height: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+}
+
+.conteiner-Inputs {
+    margin-top: 60px;
+}
+.conteiner-Inputs input{
+   display: grid;
+   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+   height: 40px;
+   width: 350px;
+   margin-top: 60px;
+   border: white;
+   border-bottom: 1px solid black;
+}
+
+.Link{
+    display: flex;
+    justify-content: space-between; 
+}
+.conteiner-Recuerdame {
+    margin-top: 20px;
+}
+.contenier-Registro{
+    margin-left: 60px;
+}
+
+button{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border:none;
+    background-color: #FF5A5F;
+    color: white;
+}
+
+.img-Facebook{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.img-Facebook h4{
+    margin-left: 30px;
+}
+.img-Facebook img{
+   height: 50px;
+}
+
+.img-Google{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+.img-Google h4{
+    margin-left: 30px;
+}
+.img-Google img{
+    height: 50px;
+ }
+
+.link-Registrar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+ }
+ .link-Registrar h5{
+   margin-top: 20px;
+ }
+.link-Registrar a{
+    margin-top: 20px;
+}
+

@@ -1,17 +1,39 @@
 import React from 'react';
 import '../assets/styles/components/Carousel.scss';
+import Carousel from 'react-bootstrap/Carousel';
+import Prueba from "../assets/img/Pruegba.jpg";
 
-const Carousel = () => {
-  return (
+const conteinerCarusel = () =>  (
     <section className='carousel'>
-      <figure>
-        <img src='https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg' alt='MDN' />
-      </figure>
-      <figure>
-        <img src='https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg' alt='MDN' />
-      </figure>
+      <Carousel>
+
+         <Carousel.Item>
+              <img
+               className="d-block w-100"
+               src={Prueba}
+               alt="First slide"
+               />
+        </Carousel.Item>
+
+        <Carousel.Item>
+              <img
+               className="d-block w-100"
+               src={Prueba}
+               alt="First slide"
+               />
+        </Carousel.Item>
+
+        <Carousel.Item>
+              <img
+               className="d-block w-100"
+               src={Prueba}
+               alt="First slide"
+               />
+        </Carousel.Item>
+ 
+      </Carousel>
     </section>
   );
-};
 
-export default Carousel;
+
+export default conteinerCarusel;

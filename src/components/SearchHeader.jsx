@@ -8,15 +8,15 @@ class Search extends React.Component {
             <section className="search">
                 <div  className="search__input">
                     <img  src={searchIcon} alt="Search"/>
-                    <input type="text" className="search__input--form" placeholder="Buscar..."/>
+                    <input type="search" name="" id="" className="search__input--form" placeholder="Buscar..."/>
                 </div>
 
                 <div className="search__date">
-                    31 Jul - 20 Ago
+                    <input type="date" name="" id=""/>
                 </div>
 
                 <div className="search__category">
-                    1 Aventurero
+                    <input type="search" name="" id="" placeholder="Categoria"/>
                 </div>
             </section>
         );

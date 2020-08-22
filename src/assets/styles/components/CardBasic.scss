@@ -1,9 +1,16 @@
 @import '../vars';
 
+.Superion{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 500px;
+  margin-left: 30px;
+  
+}
+
 .card {
-  max-width: 431px;
+  max-width: 450px;
   height: 284px;
-  margin: 10px auto;
   border-radius: 20px;
   overflow: hidden;
   background-color: get-opacity($color-gray, 0.8);

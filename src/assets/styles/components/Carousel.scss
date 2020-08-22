@@ -1,13 +1,8 @@
-@import '../vars';
+.carousel{
+  height: 50vh;
+  width: 100%;
+}
 
-.carousel {
-  display: flex;
-
-  @media (max-width: 500px) {
-    flex-wrap: wrap;
-  }
-
-  figure {
-    // width: 200px;
-  }
+.carousel img{
+  height: 50vh;
 }

@@ -1,3 +1,4 @@
+
 .header {
     background-color: white;
     display: flex;
@@ -32,13 +33,14 @@
     align-items: center;
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    
 
     &__input {
         display: flex;
         align-items: center;
         justify-content: space-around;
         padding: 0 20px;
-        border-right: 1px solid gray;
+        border: white;
 
 
         & img {
@@ -50,7 +52,8 @@
         & input {
             border: none;
             width: 150px;
-            padding: 5px
+            padding: 5px;
+            border: white;
         }
     }
 
@@ -58,11 +61,18 @@
         border-right: 1px solid gray;
         padding: 0 20px;
         cursor: pointer;
+        
     }
 
     &__category {
         padding: 0 20px;
         cursor: pointer;
+        & input {
+            border: none;
+            width: 150px;
+            padding: 5px;
+            border: white;
+        }
     }
 }
 
