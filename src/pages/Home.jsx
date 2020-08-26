@@ -6,6 +6,7 @@ import CardOption from '../components/CardOption';
 const Home = () => {
   const data = [
     {
+      id: 1,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventTitle: 'El llanerazo',
       eventDetails: 'Vive el mayor festival de música llanera',
@@ -16,6 +17,7 @@ const Home = () => {
       priceLocation: null,
     },
     {
+      id: 2,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
@@ -32,7 +34,7 @@ const Home = () => {
       <CardBasic data={data[0]} />
       <div className='cards'>
         {data.map((item) => (
-          <CardOption item={item} />
+          <CardOption item={item} key={item.id} />
         ))}
       </div>
     </div>

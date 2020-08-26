@@ -1,39 +1,13 @@
 import React from 'react';
-import '../assets/styles/components/Carousel.scss';
 import Carousel from 'react-bootstrap/Carousel';
-import Prueba from "../assets/img/Pruegba.jpg";
+import '../assets/styles/components/Carousel.scss';
 
-const conteinerCarusel = () =>  (
-    <section className='carousel'>
-      <Carousel>
+const ControlledCarousel = () => (
+  <Carousel>
+    <Carousel.Item>
+      <img className='d-block w-100' src='http://getwallpapers.com/wallpaper/full/c/e/f/61064.jpg' alt='First slide' />
+    </Carousel.Item>
+  </Carousel>
+);
 
-         <Carousel.Item>
-              <img
-               className="d-block w-100"
-               src={Prueba}
-               alt="First slide"
-               />
-        </Carousel.Item>
-
-        <Carousel.Item>
-              <img
-               className="d-block w-100"
-               src={Prueba}
-               alt="First slide"
-               />
-        </Carousel.Item>
-
-        <Carousel.Item>
-              <img
-               className="d-block w-100"
-               src={Prueba}
-               alt="First slide"
-               />
-        </Carousel.Item>
- 
-      </Carousel>
-    </section>
-  );
-
-
-export default conteinerCarusel;
+export default ControlledCarousel;

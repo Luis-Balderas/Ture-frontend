@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import IconHeart from '../assets/img/heart.png';
 import IconStar from '../assets/img/star.png';
 import '../assets/styles/components/CardOption.scss';
 
 const CardOption = ({ item }) => {
-  const { eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
+  const { id, eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
   return (
-    <div className='cardOption'>
+    <div className='cardOption' key={id}>
       <div className='cardOption__container'>
-        <a className='cardOption__link' href={eventLocale}>
+        <Link to={`event/${id}`} className='cardOption__link'>
           <img src={eventUrlImage} alt='Imagen de Evento' />
-        </a>
+        </Link>
         <div className='cardOption__details'>
           <div className='cardOption__details--left'>
             <p>
@@ -51,13 +52,10 @@ const CardOption = ({ item }) => {
                 </h3>
               ) : null}
             </div>
-            
           </div>
         </div>
       </div>
 
-
-
       <div className='cardOption__container'>
         <a className='cardOption__link' href={eventLocale}>
           <img src={eventUrlImage} alt='Imagen de Evento' />
@@ -102,7 +100,6 @@ const CardOption = ({ item }) => {
                 </h3>
               ) : null}
             </div>
-            
           </div>
         </div>
       </div>
@@ -150,12 +147,10 @@ const CardOption = ({ item }) => {
                 </h3>
               ) : null}
             </div>
-            
           </div>
         </div>
       </div>
     </div>
-    
   );
 };
 
