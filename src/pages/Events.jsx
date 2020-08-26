@@ -1,13 +1,12 @@
 import React from 'react';
-
+import '../assets/styles/pages/Events.scss';
 import CardOption from '../components/CardOption';
 import Mapita from '../components/Mapita';
-
-import '../assets/styles/pages/Events.scss';
 
 const EventOption = () => {
   const data = [
     {
+      id: 1,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventTitle: 'El llanerazo',
       eventDetails: 'Vive el mayor festival de música llanera',
@@ -18,6 +17,7 @@ const EventOption = () => {
       priceLocation: null,
     },
     {
+      id: 2,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
@@ -28,6 +28,7 @@ const EventOption = () => {
       priceLocation: '80.000',
     },
     {
+      id: 3,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
@@ -38,6 +39,7 @@ const EventOption = () => {
       priceLocation: '80.000',
     },
     {
+      id: 4,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
@@ -48,6 +50,7 @@ const EventOption = () => {
       priceLocation: '80.000',
     },
     {
+      id: 5,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
@@ -61,26 +64,24 @@ const EventOption = () => {
 
   return (
     <section className='EventsContainer'>
-
       <div className='container'>
-
         <div className='locationDetails'>
           <small>Más de 300 experiencias increibles | 31 jul - 20 ago | 1 aventurero</small>
-          <h3>Aventuras en Ewaso <br /> Kendong</h3>
+          <h3>
+            Aventuras en Ewaso <br /> Kendong
+          </h3>
         </div>
 
         <section className='EventsCardsOption'>
-          { data.map((item) => {
+          {data.map((item) => {
             return <CardOption item={item} />;
-          }) }
+          })}
         </section>
-
       </div>
 
       <section className='mapitaContainer'>
         <Mapita />
       </section>
-
     </section>
   );
 };

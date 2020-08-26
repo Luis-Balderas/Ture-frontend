@@ -1,19 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import IconHeart from '../assets/img/heart.png';
 import IconStar from '../assets/img/star.png';
 import '../assets/styles/components/CardOption.scss';
 
 const CardOption = ({ item }) => {
-  const { eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
+  const { id, eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
   return (
     <div className='cardOption'>
-
       <div className='cardOption__container'>
-        <a className='cardOption__link' href={eventLocale}>
+        <Link to={`events/${id}`} className='cardOption__link'>
           <img src={eventUrlImage} alt='Imagen de Evento' />
-        </a>
+        </Link>
         <div className='cardOption__details'>
-
           <div className='cardOption__details--left'>
             <p>
               <small>Estadía opcional ({eventDisponibility})</small>
@@ -29,14 +28,14 @@ const CardOption = ({ item }) => {
           <div className='cardOption__details--center'>
             <p>{eventDetails}</p>
           </div>
-
           <div className='cardOption__details--right'>
-
             <div className='star-rating'>
               <figure>
                 <img src={IconStar} alt='Icono de calificación' />
               </figure>
-              <small>5.0 <span>(235)</span></small>
+              <small>
+                5.0 <span>(235)</span>
+              </small>
             </div>
             <div className='price'>
               {pricePeople ? (
@@ -58,13 +57,10 @@ const CardOption = ({ item }) => {
                 </p>
               ) : null}
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
-
   );
 };
 
