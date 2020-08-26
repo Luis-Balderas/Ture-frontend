@@ -1,18 +1,17 @@
 @import '../vars';
+@import '../functions.scss';
 
 
 .cards{
   margin: 0;
 }
 .cardOption {
-  margin-bottom: 100px;
   margin: 0;
-  margin-bottom: 50px;
 
   &__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin: 40px;
+    margin: 20px;
     background-color: white;
     border-radius: 20px;
     border:1px solid black
@@ -37,37 +36,32 @@
     &--left {
       grid-column: 1 / span 2;
 
-      p {
-        font-size: $description-card-size;
+      small {
+        font-family: $font-secundary;
       }
 
       a {
-        font-family: $font-primary;
         text-decoration: none;
         color: $color-black;
 
         h5 {
           font-weight: bold;
           margin: 20px 0;
+          font-family: $font-primary;
         }
       }
 
-      h3 {
-        font-family: $font-secundary;
-        font-size: $description-card-size;
-        font-weight: 400;
-        margin-bottom: 5px;
-      }
-
-      span {
-        grid-row: 3 / span 2;
-      }
     }
 
-    & img {
+    & figure {
       grid-row: 1 / span 1;
       grid-column: 3 / span 1;
-      width: 20px;
+      width: fit-content;
+      height: fit-content;
+      margin: 0;
+      img {
+        width: 20px;
+      }
     }
 
     &--center {
@@ -75,7 +69,6 @@
 
       p {
         font-family: $font-secundary;
-        font-size: $description-card-size;
       }
     }
 
@@ -101,23 +94,30 @@
           }
         }
 
-
+        small{
+          margin-top: 4px;
+          span {
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
 
       }
 
-
-      h3 {
+      .price {
         margin: 3px 0;
         margin-top: 10px;
-        font-size: $description-card-size;
         font-family: $font-secundary;
-        font-weight: 400;
-
-        span {
-          font-weight: 700;
-          margin-right: 5px;
+        p {
+          margin: 2px;
+          span {
+            font-weight: bold;
+            margin-right: 5px;
+          }
         }
+
       }
+
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
+import '../assets/styles/pages/Events.scss';
 import CardOption from '../components/CardOption';
 import Mapita from '../components/Mapita';
-import './styles/Events.scss';
 
 const EventOption = () => {
   const data = [
@@ -72,7 +72,7 @@ const EventOption = () => {
           </h3>
         </div>
 
-        <section className='cardsOption'>
+        <section className='EventsCardsOption'>
           {data.map((item) => {
             return <CardOption item={item} />;
           })}

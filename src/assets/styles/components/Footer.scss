@@ -1,15 +1,17 @@
 @import '../vars';
+@import '../functions.scss';
 
-footer {
+.footer {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  border-top: 2px inset get-opacity($color-black, 0.7);
+  border-top: 2px solid get-opacity($color-black, 0.3);
   height: 70px;
   background-color: $background-footer;
 
   ul {
+    margin: 0;
     padding-left: 0;
     list-style: none;
     display: flex;
@@ -23,5 +25,9 @@ footer {
         color: $color-black;
       }
     }
+  }
+
+  p {
+    margin: 0;
   }
 }

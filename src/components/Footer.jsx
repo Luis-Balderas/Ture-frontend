@@ -11,7 +11,9 @@ const Footer = () => (
         <a href='https://localhost:8000'>Terminos</a>
       </li>
     </ul>
+
     <p>2020 Ture, inc. Todos los derechos reservados</p>
+
     <ul>
       <li>
         <a href='https://localhost:8000'>
