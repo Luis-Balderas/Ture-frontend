@@ -11,6 +11,7 @@
   background-color: $background-footer;
 
   ul {
+    margin: 0;
     padding-left: 0;
     list-style: none;
     display: flex;
@@ -24,5 +25,9 @@
         color: $color-black;
       }
     }
+  }
+
+  p {
+    margin: 0;
   }
 }

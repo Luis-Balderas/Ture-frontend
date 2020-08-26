@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   height: 500px;
   margin-left: 30px;
-  
+
 }
 
 .card {
@@ -24,6 +24,7 @@
     img {
       width: 100%;
       height: 199px;
+      border-radius: 10px;
       object-fit: cover;
     }
 
@@ -31,7 +32,6 @@
       padding: 3px 20px;
       margin: 3px 0;
       font-family: $font-primary;
-      font-size: $title-card-size;
       font-weight: bold;
     }
 
@@ -39,8 +39,6 @@
       margin-top: 8px;
       margin-left: 20px;
       font-family: $font-secundary;
-      font-size: $description-card-size;
-      font-weight: 400;
     }
   }
 }
