@@ -3,7 +3,7 @@ import React from 'react';
 import CardOption from '../components/CardOption';
 import Mapita from '../components/Mapita';
 
-import './styles/Events.scss';
+import '../assets/styles/pages/Events.scss';
 
 const EventOption = () => {
   const data = [
@@ -66,10 +66,10 @@ const EventOption = () => {
 
         <div className='locationDetails'>
           <small>Más de 300 experiencias increibles | 31 jul - 20 ago | 1 aventurero</small>
-          <h3>Aventuras en Ewaso <br/> Kendong</h3>
+          <h3>Aventuras en Ewaso <br /> Kendong</h3>
         </div>
 
-        <section className='cardsOption'>
+        <section className='EventsCardsOption'>
           { data.map((item) => {
             return <CardOption item={item} />;
           }) }
