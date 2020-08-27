@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/styles/components/BillDetails.scss';
+import localeIcon from '../assets/img/locale.svg'
 
 const BillDetails = () => {
    const data = 
@@ -14,25 +15,26 @@ const BillDetails = () => {
       eventWithIva: '396.000',
       eventTarifa: '$26.000',
       enventTotal: '$422.000',
-      text1: 'Reserve esto ahora por  $253.200',
+      valuetext1: '$253.200',
       text2: 'Pague el resto el 12 de diciembre', 
       text3: 'Cancelación gratuita por 48 horas',
       text4: 'Si cancelas dentro de las 48 horas despues de haber realizado la reservación, puedes obtener un reembolso total'
     };
   
   return (
-    <span className='card'>
+    <section className='Reservation__card'>
         <figure><img src={data.eventUrlImage} alt='Imagen de Evento' /></figure>
-        <div className='card__details'>
-        <span  >
+        <div className='Reservation__card--details'>
+        <div  >
           <h5>{data.eventTitle}</h5>
+          {/* <figure><img src={localeIcon} alt='Imagen de Evento' /></figure> */}
           <p >{data.eventLocale}</p>
-        </span>
-        <span>
+        </div>
+        <div>
           <h5 >Numero de boletas: {data.eventBol}</h5>
           <p >{data.eventDate}</p>
-        </span>
-        <span className="card__details--total">
+        </div>
+        <div className="Reservation__card--total">
           <p> $ 180.000 x 2 Boletas</p>
           <p >{data.eventTotalNeto}</p>
           <p> IVA (10%)</p>
@@ -43,15 +45,15 @@ const BillDetails = () => {
           <p >{data.eventTarifa}</p>
           <h5>Total</h5>
           <h5>{data.enventTotal}</h5>
-        </span>
-        <span>
-          <h5 >{data.text1}</h5>
+        </div>
+        <div>
+          <h5 >Reserve esto ahora por {data.valuetext1}</h5>
           <p >{data.text2}</p>
           <h5 >{data.text3}</h5>
           <p >{data.text4}</p>
-        </span>
         </div>
-    </span>
+        </div>
+    </section>
   );
 };
 

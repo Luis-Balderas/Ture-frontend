@@ -1,6 +1,8 @@
-@import '../Globales.scss';
-.card {
-  width:  100%;
+@import '../vars.scss';
+@import '../functions.scss';
+  
+.Reservation__card {
+  width:  90%;
   height: min-content;
   margin: auto 20px;
   border-radius: 20px;
@@ -14,37 +16,25 @@
       object-fit: cover;
     }
 
-    &__details {
+    &--details {
         padding: 20px 30px;
-
-        &--total{
-            display: grid;
-            grid-template-columns: repeat(2,  1fr);
-            text-align: center;
+        // & img {
+        //   width: 20px;
+        //   height: 20px;
+        //   object-fit: cover;
+        // }
+        & div {
+          padding: 10px 0;
+          border-top: 0.5px solid get-opacity($color-black, 0.8);
         }
-
-        & span {
-            padding: 15px 0;
-        }
-        h5 {
-            margin: 5px 0;
+        & h5 {
+         margin: 5px 0;
         }
     }
-
-//     &--title {
-//       padding: 3px 20px;
-//       margin: 3px 0;
-//       font-family: $font-primary;
-//       font-size: $title-card-size;
-//       font-weight: bold;
-//     }
-
-//     &--description {
-//       margin-top: 8px;
-//       margin-left: 20px;
-//       font-family: $font-secundary;
-//       font-size: $description-card-size;
-//       font-weight: 400;
-//     }
-//   }
+    
+    &--total{
+        display: grid;
+        grid-template-columns: repeat(2,  1fr);
+        text-align: center;
+    }
 }
