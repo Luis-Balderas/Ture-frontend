@@ -2,9 +2,16 @@
 @import '../components/PayDetails.scss';
 @import '../components/BillDetails.scss';
 
-.Reservation {
+.Reservation{
+  width: 90%;
   margin: 40px 5%;
-  display: grid; 
-  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px 20px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-content: space-between;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+
 }
