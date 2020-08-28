@@ -29,12 +29,28 @@ const Home = () => {
 
   return (
     <div className='Home'>
-      <CardBasic data={data[0]} />
-      <div className='cards'>
-        {data.map((item) => (
-          <CardOption item={item} />
-        ))}
-      </div>
+      <section className="mainTitle">
+        <h1>Estas son algunas de nuestras próximas experiencias</h1>
+      </section>
+      <section className="nextEvents">
+        <div><CardBasic data={data[0]} /></div>
+        <div><CardBasic data={data[0]} /></div>
+        <div><CardBasic data={data[0]} /></div>
+      </section>
+      <section className="Categories">
+        <div className="mainCategory">
+            <h4>Tenemos un gran catalogo de numeras aventuras para que vivas al maximo cada segundo de tu vida, prueba con las mejor calificadas.</h4>
+            <div className="mainCategory-card">
+              <CardBasic data={data[0]} />
+            </div>
+        </div>
+        <div className="otherCategories">
+            <div><CardBasic data={data[0]} /></div>
+            <div><CardBasic data={data[0]} /></div>
+            <div><CardBasic data={data[0]} /></div>
+            <div><CardBasic data={data[0]} /></div>
+        </div>
+      </section>
     </div>
   );
 };

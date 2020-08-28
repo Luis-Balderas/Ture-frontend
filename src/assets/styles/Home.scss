@@ -1,7 +1,53 @@
 @import './components/Globales.scss';
-
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+}
+.mainTitle{
+  margin: 50px 0 50px 0;
+  color: #FF5A5F;
+  padding-left: 42px;
+  width: 30%;
+}
+.nextEvents{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  margin-bottom: 30px;
+  padding: 0 42px;
+}
+.nextEvents div{
+  margin: 0px 10px 0px 0px;
+}
+
+.Categories{
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+}
+.mainCategory{
+  padding-top: 100px;
+}
+.mainCategory h4{
+  text-align: justify;
+  width:70%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.mainCategory__card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.otherCategories{
+  display: grid;
+  grid-template-rows:1fr 1fr;
+  grid-template-columns:1fr 1fr;
+  height: 100%;
+}
+
+.otherCategories div{
+  margin:10px;
 }
