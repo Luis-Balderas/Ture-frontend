@@ -2,12 +2,13 @@
 
 .description {
   display: grid;
-  grid-template-rows: 20% 20% 60%;
+  grid-template-rows: 40% 30% 30%;
+  gap: 20px;
   width: 80%;
   margin-left: 50px;
 
   @media (max-width: 500px) {
-    grid-template-rows: 15% 10% 75%;
+    grid-template-rows: 45% 10% 30%;
   }
 
   &__head {

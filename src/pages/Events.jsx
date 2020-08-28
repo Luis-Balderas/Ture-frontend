@@ -91,4 +91,4 @@ const Events = () => {
   );
 };
 
-export default Evens;
+export default Events;
