@@ -1,9 +1,10 @@
 import React from 'react';
 import '../assets/styles/pages/Events.scss';
+import { Link } from 'react-router-dom';
 import CardOption from '../components/CardOption';
 import Mapita from '../components/Mapita';
 
-const EventOption = () => {
+const Events = () => {
   const data = [
     {
       id: 1,
@@ -74,7 +75,11 @@ const EventOption = () => {
 
         <section className='EventsCardsOption'>
           {data.map((item) => {
-            return <CardOption item={item} />;
+            return (
+              <Link className='text-reset text-decoration-none' to={`/event/${item.id}`}>
+                <CardOption key={item.id} item={item} />
+              </Link>
+            );
           })}
         </section>
       </div>
@@ -86,4 +91,4 @@ const EventOption = () => {
   );
 };
 
-export default EventOption;
+export default Evens;
