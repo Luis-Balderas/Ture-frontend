@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import '../assets/styles/pages/Home.scss';
 import CardBasic from '../components/CardBasic';
 import CardOption from '../components/CardOption';
+import { getAllEvents } from '../redux/actions/eventsActions';
 
-const Home = () => {
+const Home = (props) => {
+  const { dataEvents } = props;
   const data = [
     {
       id: 1,
@@ -29,9 +32,24 @@ const Home = () => {
     },
   ];
 
+  const getEvents = async () => {
+    await props.getAllEvents();
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, [dataEvents.lenght]);
+  if (!dataEvents) {
+    return '';
+  }
   return (
     <div className='Home'>
-      <CardBasic data={data[0]} />
+      <div className='cards'>
+        {dataEvents.map((event) => (
+          <CardBasic data={event} key={event._id} />
+        ))}
+      </div>
+
       <div className='cards'>
         {data.map((item) => (
           <CardOption item={item} key={item.id} />
@@ -41,4 +59,9 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = ({ eventsReducer }) => eventsReducer;
+
+const mapDispatchToProps = {
+  getAllEvents,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
