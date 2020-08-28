@@ -1,5 +1,7 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import '../assets/styles/Globales.scss';
 import Layout from '../components/Layout';
 import NotFound from '../components/NotFound';
 import EventDetails from '../pages/EventDetails';

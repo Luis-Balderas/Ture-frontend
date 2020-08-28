@@ -1,11 +1,28 @@
 import React, { useState } from 'react';
 import '../assets/styles/components/CardPayment.scss';
 
-const CardPayment = () => {
+const CardPayment = ({ data }) => {
   const [name, setName] = useState('');
-  const value = 180000;
-  const porcentage = 0.1;
-  const tarifa = 26000;
+  const { price } = data;
+
+  const getValues = (price) => {
+    const percentage = 0.1;
+    const service = 26000;
+    let newPrice = 0;
+    if (name > 0) {
+      newPrice = price * name;
+    } else {
+      newPrice = price * 1;
+    }
+
+    const iva = newPrice * percentage;
+    const valueIva = newPrice + iva;
+    const total = newPrice + iva + service;
+
+    return { newPrice, iva, valueIva, service, total };
+  };
+
+  const { newPrice, iva, valueIva, service, total } = getValues(price);
 
   const handleSubmit = (evt) => {
     console.log('handleSubmit -> evt', evt);
@@ -17,7 +34,7 @@ const CardPayment = () => {
     <section className='payment'>
       <div className='payment__container'>
         <div className='payment__head'>
-          <p>${value}</p>
+          <p>${price}</p>
           <span>/ persona</span>
         </div>
         <div className='payment__card'>
@@ -27,39 +44,46 @@ const CardPayment = () => {
               <h5>Final del evento</h5>
             </div>
             <div className='txt'>
-              <p>31 jul</p>
-              <p>31 jul</p>
+              <p>{data.startDate}</p>
+              <p>{data.endDate}</p>
             </div>
           </div>
           <div className='payment__card--main'>
             <h5>N° de boletas</h5>
             <form onSubmit={handleSubmit}>
-              <input className='input-range' placeholder='1' min='1' max='30' type='number' onChange={(e) => setName(e.target.value)} />
+              <input
+                className='input-range'
+                placeholder='1'
+                min='1'
+                max={data.ocupation}
+                type='number'
+                onChange={(e) => setName(e.target.value)}
+              />
             </form>
           </div>
         </div>
         <div className='payment__details'>
           <div className='payment__details--price'>
             <p>
-              ${value} x {name || 1} boletas{' '}
+              ${price} x {name || 1} boletas{' '}
             </p>
-            <p className='value'>${value * (name || 1)}</p>
+            <p className='value'>${newPrice}</p>
           </div>
           <div className='payment__details--price'>
             <p>IVA(10%)</p>
-            <p className='value'>${value * (name || 1) * porcentage}</p>
+            <p className='value'>${iva}</p>
           </div>
           <div className='payment__details--price'>
             <p>Valor con IVA</p>
-            <p className='value'>${value * (name || 1) + value * (name || 1) * porcentage}</p>
+            <p className='value'>${valueIva}</p>
           </div>
           <div className='payment__details--price'>
-            <p>Valor con IVA</p>
-            <p className='value'>$26000</p>
+            <p>Tarifa del servicio</p>
+            <p className='value'>${service}</p>
           </div>
           <div className='payment__details--price total'>
             <p>Total</p>
-            <p className='value'>${value * (name || 1) + value * (name || 1) * porcentage + tarifa}</p>
+            <p className='value'>${total}</p>
           </div>
           <div className='payment__details--btn'>
             <button type='submit'>Reservar</button>
