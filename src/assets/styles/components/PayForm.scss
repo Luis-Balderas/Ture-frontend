@@ -1,0 +1,107 @@
+@import '../vars.scss';
+@import '../functions.scss';
+
+.Reservation__PayForm {
+  height: 100%;
+  display: grid;
+  grid-template-columns: none;
+  grid-template-rows: auto;
+  align-items: start;
+
+  & > span {
+      grid-column: 1 / -1;
+  }
+
+  & h5 {
+    margin: 0;
+    padding: 0 0 17px;
+    border-bottom: 1px solid $color-black;
+  }
+
+  &--items {
+    width: 100%;
+    height: min-content;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px 20px;
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+    & input {
+      width: 100%;
+      padding: 10px 15px;
+      background: get-opacity($color-black, 0.1);
+      border: 1px solid get-opacity($color-black, 0.7);
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+    & p {
+      margin: 12px 0;
+      font-weight: bold;
+    }
+  }
+
+  &--pay {
+      grid-column: 1 / -1;
+  }
+
+  &--pay1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid get-opacity($color-black, 0.7);
+    box-sizing: border-box;
+    border-radius: 10px;
+    grid-column: 1 / -1;
+    & label {
+      display:flex;
+      justify-content: flex-start;
+      align-items:center;
+    }
+    & input {
+      margin: 10px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--pay2 {
+    padding: 10px;
+    border: 1px solid get-opacity($color-black, 0.7);
+    box-sizing: border-box;
+    border-radius: 10px;
+    grid-column: 1 / -1;
+    & label {
+      display:flex;
+      justify-content: flex-start;
+      align-items:center;
+    }
+    & input {
+      margin: 10px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  &--button{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    & button {
+      color: $color-white;
+      margin: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: $color-main;
+      cursor: pointer;
+      & p{
+      margin: 0;
+      }
+      &:hover {
+          box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
+      }
+    }
+  }
+}

@@ -1,16 +1,14 @@
 import React from 'react';
 
 import '../assets/styles/pages/Reservation.scss';
-import PayDetails from '../components/PayDetails';
-import BillDetails from '../components/BillDetails';
+import PayForm from '../components/PayForm';
+import CardPayment from '../components/CardPayment';
 
-const Reservation = () => {
-  return (
-    <div className="Reservation">
-      <PayDetails />
-      <BillDetails />
-    </div>
-  );
-};
+const Reservation = () => (
+  <div className="Reservation">
+    <PayForm/>
+    {/* <CardPayment /> */}
+  </div>
+);
 
 export default Reservation;
