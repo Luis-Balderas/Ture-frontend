@@ -12,3 +12,31 @@ export const getAllUsers = () => async (dispatch) => {
     console.log('getAllUsers -> err', err);
   }
 };
+
+export const createUser = (user, idEvent) => async (dispatch) => {
+  try {
+    const newUser = {
+      ...user,
+      event: idEvent,
+    };
+
+    const response = await fetch('http://localhost:3000/user/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newUser),
+    });
+    const data = await response.json();
+    console.log('dataUser -> data', data);
+
+    if (data.error !== '') {
+      throw new Error(data.error);
+    }
+    dispatch({
+      type: 'ADD_USER',
+    });
+  } catch (err) {
+    console.log('createUser -> err', err);
+  }
+};
