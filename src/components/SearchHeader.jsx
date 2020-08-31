@@ -1,26 +1,20 @@
 import React from 'react';
 
-import searchIcon from '../assets/img/search-icon.jpg';
+import searchIcon from '../assets/img/search-icon.svg';
 
-class Search extends React.Component {
-    render (){
-        return (
-            <section className="search">
-                <div  className="search__input">
-                    <img  src={searchIcon} alt="Search"/>
-                    <input type="search" name="" id="" className="search__input--form" placeholder="Buscar..."/>
-                </div>
+const Search = () => {
 
-                <div className="search__date">
-                    <input type="date" name="" id=""/>
-                </div>
-
-                <div className="search__category">
-                    <input type="search" name="" id="" placeholder="Categoria"/>
-                </div>
-            </section>
-        );
-    }
+  return (
+    <section className="header__search">
+      <div  className="header__search--input">
+          <form><input type="search" name="" id="" placeholder="Buscar evento"/></form>
+      </div>
+      <div className="header__search--date">
+          <form><input type="date" name="" id="headerDate" /></form>
+      </div>
+      <img  src={searchIcon} alt="Search Event"/>
+    </section>
+  );
 };
 
 export default Search;
