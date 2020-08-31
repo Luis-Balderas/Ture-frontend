@@ -1,14 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
+import {connect} from 'react-redux';
 import '../assets/styles/components/PayForm.scss';
+import Button from './Button';
+import { setDataForm } from '../redux/actions/reservationsActions';
+// import { postReservation } from '../redux/actions/reservationsActions';
 
-const PayForm = () => {
+const PayForm = (props) => {
+
+  const { dataEvent, total , dataform } = props;
+  const [form, setValues] = useState();
+
+  const handleInput = event => {
+    setValues({...form,[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value })
+  }
+
+  const handleClickCancel = event => {
+    props.history.push('/');
+  }
+
+  const reservation = async () => {
+    await props.postReservation(dataEvent,total,dataform,);
+  };
+ 
+  const handleClick = async (event) => {
+    event.preventDefault();
+    props.setDataForm(form);
+    // reservation();
+    // props.history.push('/');
+    console.log("Hola")
+  }
+
 
   return (
     <section className='Reservation__PayForm'>
       <span><h5>Confirmar y Pagar</h5></span>
       <form  action="" className='Reservation__PayForm--items'>
         <div className='Reservation__PayForm--pay'>
-          <p>Medio de Pago</p>
+          <label>Medio de Pago</label>
           <input
             name="methodPay"
             aria-label="methodPay"
@@ -19,7 +47,7 @@ const PayForm = () => {
           </input>
         </div>
         <div>
-          <p>Nombre</p>
+          <label>Nombre</label>
           <input
             // value={userById.name}
             name="firsName"
@@ -29,7 +57,7 @@ const PayForm = () => {
           </input>
         </div>
         <div>
-          <p>Apellido</p>
+          <label>Apellido</label>
           <input 
             name="LastName"
             aria-label="LastName"
@@ -38,7 +66,7 @@ const PayForm = () => {
           </input>
         </div>
         <div>
-          <p>Informacion de facturación</p>
+          <label>Informacion de facturación</label>
           <input 
             name="Postal Code"
             aria-label="Postal Code"
@@ -47,7 +75,7 @@ const PayForm = () => {
           </input>
         </div>
         <div>
-          <p>Pais/Región</p>
+          <label>Pais/Región</label>
           <input 
             name="country"
             aria-label="country"
@@ -65,7 +93,7 @@ const PayForm = () => {
             </input>
             <strong>Pago único</strong>
           </label>
-          <p>$442.000</p>
+          <label>${total}</label>
         </div>
         <div  className='Reservation__PayForm--pay2'>
           <label>
@@ -81,16 +109,22 @@ const PayForm = () => {
         </div>
       </form>
       <div className="Reservation__PayForm--button">
-        {/* <Button data="Confirmar" onClick={handleClick} /> */}
-        <button type='button'>
-          <strong>Cancelar</strong>
-        </button >
-        <button type='button'>
-          <strong>Confirmar</strong>
-        </button >
+        <Button data="Cancelar" onClick={(event) => handleClickCancel(event)}/>
+        <Button data="Confirmar" onClick={(event) => handleClick(event)}/>
       </div>
     </section>
   );
 };
 
-export default PayForm;
+const mapToStateToProps = (state) => {
+  return {
+    dataEvent:  state.dataEvent,
+    total:      state.total,
+    dataform:   state.dataform,
+  }
+}
+const mapDispatchToProps = {
+    setDataForm,
+    // postReservation,
+};
+export default connect(mapToStateToProps, mapDispatchToProps)(PayForm);
