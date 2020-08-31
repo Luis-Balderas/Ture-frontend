@@ -30,7 +30,7 @@
     & input {
       width: 100%;
       padding: 10px 15px;
-      background: get-opacity($color-black, 0.1);
+      background: get-opacity($color-black, 0.03);
       border: 1px solid get-opacity($color-black, 0.7);
       box-sizing: border-box;
       border-radius: 10px;
@@ -49,6 +49,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    background: get-opacity($color-black, 0.03);
     border: 1px solid get-opacity($color-black, 0.7);
     box-sizing: border-box;
     border-radius: 10px;
@@ -67,6 +68,7 @@
 
   &--pay2 {
     padding: 10px;
+    background: get-opacity($color-black, 0.03);
     border: 1px solid get-opacity($color-black, 0.7);
     box-sizing: border-box;
     border-radius: 10px;
@@ -89,6 +91,7 @@
     justify-content: flex-end;
     align-items: end;
     & button {
+      height: 40px;
       color: $color-white;
       margin: 10px;
       padding: 10px;

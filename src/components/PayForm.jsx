@@ -83,10 +83,10 @@ const PayForm = () => {
       <div className="Reservation__PayForm--button">
         {/* <Button data="Confirmar" onClick={handleClick} /> */}
         <button type='button'>
-          <p>Cancelar</p>
+          <strong>Cancelar</strong>
         </button >
         <button type='button'>
-          <p>Confirmar</p>
+          <strong>Confirmar</strong>
         </button >
       </div>
     </section>
