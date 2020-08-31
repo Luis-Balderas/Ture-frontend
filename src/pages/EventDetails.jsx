@@ -20,7 +20,6 @@ const EventDetails = (props) => {
     getEventDetail();
   }, []);
 
-  console.log('EventDetails -> props', props);
   if (!eventById) {
     return '';
   }

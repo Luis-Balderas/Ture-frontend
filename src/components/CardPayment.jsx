@@ -21,13 +21,16 @@ const CardPayment = ({ data }) => {
 
     return { newPrice, iva, valueIva, service, total };
   };
-
   const { newPrice, iva, valueIva, service, total } = getValues(price);
 
   const handleSubmit = (evt) => {
     console.log('handleSubmit -> evt', evt);
     evt.preventDefault();
     alert(`Submitting Name ${name}`);
+  };
+
+  const formattedDate = (date) => {
+    return date.slice(0, 10);
   };
 
   return (
@@ -44,8 +47,8 @@ const CardPayment = ({ data }) => {
               <h5>Final del evento</h5>
             </div>
             <div className='txt'>
-              <p>{data.startDate}</p>
-              <p>{data.endDate}</p>
+              <p>{formattedDate(data.startDate)}</p>
+              <p>{formattedDate(data.endDate)}</p>
             </div>
           </div>
           <div className='payment__card--main'>
