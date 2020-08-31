@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/img/logo.png';
 import '../assets/styles/components/Header.scss';
-import ButtonsHeader from './ButtonsHeader';
+import Button from './Button';
 import Search from './SearchHeader';
 
 const Header = () => (
@@ -12,7 +12,10 @@ const Header = () => (
       <p>Ture</p>
     </Link>
     <Search />
-    <ButtonsHeader />
+    <div className="header__button">
+      <Button data="Iniciar Sesión" />
+      <Button data="Registrarse" />
+    </div>
   </header>
 );
 

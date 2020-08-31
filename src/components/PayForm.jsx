@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
+import {connect} from 'react-redux';
 import '../assets/styles/components/PayForm.scss';
+import Button from './Button';
+import { setDataForm } from '../redux/actions/reservationsActions';
+// import { postReservation } from '../redux/actions/reservationsActions';
 
-const PayForm = () => {
+const PayForm = (props) => {
+
+  const { dataEvent, total , dataform } = props;
+  const [form, setValues] = useState();
+
+  const handleInput = event => {
+    setValues({...form,[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value })
+  }
+
+  const reservation = async () => {
+    await props.postReservation(dataEvent,total,dataform,);
+  };
+ 
+  const handleClick = async event => {
+    event.preventDefault();
+    props.setDataForm(form);
+    // reservation();
+    // props.history.push('/');
+    
+  }
+  // console.log(dataform)
 
   return (
     <section className='Reservation__PayForm'>
@@ -81,16 +105,22 @@ const PayForm = () => {
         </div>
       </form>
       <div className="Reservation__PayForm--button">
-        {/* <Button data="Confirmar" onClick={handleClick} /> */}
-        <button type='button'>
-          <strong>Cancelar</strong>
-        </button >
-        <button type='button'>
-          <strong>Confirmar</strong>
-        </button >
+        <Button data="Cancelar"/>
+        <Button data="Confirmar" onClick={handleClick}/>
       </div>
     </section>
   );
 };
 
-export default PayForm;
+const mapToStateToProps = (state) => {
+  return {
+    dataEvent:  state.dataEvent,
+    total:      state.total,
+    dataform:   state.dataform,
+  }
+}
+const mapDispatchToProps = {
+    setDataForm,
+    // postReservation,
+};
+export default connect(mapToStateToProps, mapDispatchToProps)(PayForm);
