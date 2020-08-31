@@ -34,7 +34,7 @@ const EventDetails = (props) => {
             <CardDescription data={eventById} />
           </div>
           <div className='event_details__container--payment'>
-            <CardPayment data={eventById} />
+            <CardPayment props={props} />
           </div>
         </div>
       </div>
