@@ -1,9 +1,16 @@
-@import './Globales.scss';
+@import '../vars';
+
+// .Superion{
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   height: 500px;
+//   margin-left: 30px;
+
+// }
 
 .card {
-  max-width: 431px;
+  max-width: 450px;
   height: 284px;
-  margin: 10px auto;
   border-radius: 20px;
   overflow: hidden;
   background-color: get-opacity($color-gray, 0.8);
@@ -14,17 +21,22 @@
     text-decoration: none;
     cursor: pointer;
 
-    img {
+    figure {
       width: 100%;
-      height: 199px;
-      object-fit: cover;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 199px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
     }
 
     &--title {
       padding: 3px 20px;
       margin: 3px 0;
       font-family: $font-primary;
-      font-size: $title-card-size;
       font-weight: bold;
     }
 
@@ -32,8 +44,6 @@
       margin-top: 8px;
       margin-left: 20px;
       font-family: $font-secundary;
-      font-size: $description-card-size;
-      font-weight: 400;
     }
   }
 }

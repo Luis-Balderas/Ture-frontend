@@ -1,0 +1,11 @@
+@import '../components/PayForm.scss';
+
+.Reservation {
+  margin: 40px 5%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px 20px;
+  @media (max-width: 800px) {
+    grid-template-columns: none;
+  }
+}

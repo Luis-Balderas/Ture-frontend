@@ -1,11 +1,15 @@
-import React from 'react';
-import '../assets/styles/Home.scss';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import '../assets/styles/pages/Home.scss';
 import CardBasic from '../components/CardBasic';
 import CardOption from '../components/CardOption';
+import { getAllEvents } from '../redux/actions/eventsActions';
 
-const Home = () => {
+const Home = (props) => {
+  const { dataEvents } = props;
   const data = [
     {
+      id: 1,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventTitle: 'El llanerazo',
       eventDetails: 'Vive el mayor festival de música llanera',
@@ -16,6 +20,7 @@ const Home = () => {
       priceLocation: null,
     },
     {
+      id: 2,
       eventUrlImage: 'https://images.freeimages.com/images/small-previews/5c6/sunset-jungle-1383333.jpg',
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
@@ -27,6 +32,16 @@ const Home = () => {
     },
   ];
 
+  const getEvents = async () => {
+    await props.getAllEvents();
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, [dataEvents.lenght]);
+  if (!dataEvents) {
+    return '';
+  }
   return (
     <div className='Home'>
       <section className="mainTitle">
@@ -55,4 +70,9 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = ({ eventsReducer }) => eventsReducer;
+
+const mapDispatchToProps = {
+  getAllEvents,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

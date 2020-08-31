@@ -1,0 +1,33 @@
+
+.EventsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  .container {
+    margin: 0 auto;
+    .locationDetails {
+      margin-left: 40px;
+      small {
+        display: inline-block;
+        margin-top: 40px;
+      }
+      h3 {
+        margin-bottom: 40px;
+      }
+    }
+
+    .EventsCardsOption {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 700px));
+    }
+  }
+
+  .mapitaContainer {
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+

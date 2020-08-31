@@ -1,34 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ButtonsHeader = () => (
-  <div className='btnContainer'>
+  <div className='header__button'>
     <div>
+      <Link to="/Sing">
       <button
         type='button'
-        className='btnContainer-btn'
-        // onClick={props.onOpenModal}
-      >
-        <p>Iniciar Sesión</p>
+        className='header__button--btn'>
+      Iniciar Sesión
       </button>
-      {/* <LoginModal
-                    isOpen={props.modalIsOpen}
-                    onClose={props.onCloseModal}
-                    onLogin={props.onLogin}
-                /> */}
+      </Link>
     </div>
     <div>
+    <Link to="/Login">
       <button
         type='button'
-        // onClick={props.onOpenModal}
-        className='btnContainer-btn'
-      >
+        className='header__button--btn'>
         Registrarse
       </button>
-      {/* <RegisterModal
-                    isOpen={props.modalIsOpen}
-                    onClose={props.onCloseModal}
-                    onRegister={props.onRegister}
-                /> */}
+      </Link>
     </div>
   </div>
 );

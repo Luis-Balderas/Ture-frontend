@@ -1,27 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import IconHeart from '../assets/img/heart.png';
 import IconStar from '../assets/img/star.png';
 import '../assets/styles/components/CardOption.scss';
 
 const CardOption = ({ item }) => {
-  const { eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
+  const { id, eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
   return (
     <div className='cardOption'>
       <div className='cardOption__container'>
-        <a className='cardOption__link' href={eventLocale}>
+        <Link to={`events/${id}`} className='cardOption__link'>
           <img src={eventUrlImage} alt='Imagen de Evento' />
-        </a>
+        </Link>
         <div className='cardOption__details'>
           <div className='cardOption__details--left'>
             <p>
-              Estadía opcional
-              <span> ({eventDisponibility})</span>
+              <small>Estadía opcional ({eventDisponibility})</small>
             </p>
             <a href={eventLocale}>
-              <h2>{eventTitle}</h2>
+              <h5>{eventTitle}</h5>
             </a>
           </div>
-          <img src={IconHeart} alt='icono de favoritos.' />
+
+          <figure>
+            <img src={IconHeart} alt='icono de favoritos.' />
+          </figure>
           <div className='cardOption__details--center'>
             <p>{eventDetails}</p>
           </div>
@@ -30,26 +33,28 @@ const CardOption = ({ item }) => {
               <figure>
                 <img src={IconStar} alt='Icono de calificación' />
               </figure>
-              <span> 5.0 (235) </span>
+              <small>
+                5.0 <span>(235)</span>
+              </small>
             </div>
-            <div>
+            <div className='price'>
               {pricePeople ? (
-                <h3>
+                <p>
                   <span>
                     {pricePeople}
                     COP
                   </span>
                   por persona
-                </h3>
+                </p>
               ) : null}
               {priceLocation ? (
-                <h3>
+                <p>
                   <span>
                     {priceLocation}
                     COP
                   </span>
                   (Estadía opcional)
-                </h3>
+                </p>
               ) : null}
             </div>
           </div>

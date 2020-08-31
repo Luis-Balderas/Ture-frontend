@@ -1,0 +1,118 @@
+@import '../vars';
+
+.payment {
+  background-color: $color-gray;
+  border: 1px solid $color-black;
+  border-radius: 20px;
+  margin-right: 150px;
+  width: 100%;
+
+  &__container {
+    padding: 20px;
+  }
+
+  &__head {
+    display: flex;
+
+    p,
+    span {
+      font-size: 20px;
+      // margin-left: 10px;
+    }
+  }
+
+  &__card {
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px auto;
+    width: 90%;
+
+    &--head {
+      display: grid;
+      grid-template: 1fr / 1fr;
+
+      .title,
+      .txt {
+        display: flex;
+        justify-content: space-around;
+
+        h5,
+        p {
+          padding-top: 5px;
+        }
+      }
+
+      .title {
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          border-right: 1px solid;
+          height: 56px;
+
+          @media (max-width: 430px) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &--main {
+      border-top: 1px solid;
+      padding: 10px;
+      padding-left: 20px;
+
+      .input-range {
+        width: 50px;
+        border: none;
+        padding: 5px;
+        border-radius: 6px;
+      }
+    }
+
+  }
+
+  &__details {
+    padding: 10px;
+
+    &--price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 5px;
+
+      .value {
+        font-weight: 700;
+      }
+
+      &.total {
+        border-top: 1px solid #000;
+        padding-top: 15px;
+      }
+    }
+
+    &--btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+
+      button {
+        font-weight: bold;
+        color: white;
+        width: 150px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #ff5a5f;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0px 4px 4px #afa8a9;
+        }
+      }
+
+    }
+  }
+}
