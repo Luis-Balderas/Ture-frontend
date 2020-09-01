@@ -19,7 +19,7 @@ const PayForm = (props) => {
   }
 
   const reservation = async () => {
-    await props.postReservation(dataEvent,total,dataform,);
+    await props.postReservation(dataEvent,total,dataform);
   };
  
   const handleClick = async (event) => {
@@ -27,9 +27,8 @@ const PayForm = (props) => {
     props.setDataForm(form);
     // reservation();
     // props.history.push('/');
-    console.log("Hola")
+    console.log(dataform)
   }
-
 
   return (
     <section className='Reservation__PayForm'>
@@ -116,13 +115,7 @@ const PayForm = (props) => {
   );
 };
 
-const mapToStateToProps = (state) => {
-  return {
-    dataEvent:  state.dataEvent,
-    total:      state.total,
-    dataform:   state.dataform,
-  }
-}
+const mapToStateToProps = ({ reservationsReducer }) => reservationsReducer;
 const mapDispatchToProps = {
     setDataForm,
     // postReservation,

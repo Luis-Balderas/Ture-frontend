@@ -1,8 +1,9 @@
 const INITIAL_STATE = {
   error: null,
   loading: false,
-  dataEvent: '',
-  total:'',
+  // eventId: '',
+  // userId: '';
+  // total:'',
   dataform: '',
 };
 
@@ -11,7 +12,7 @@ export default (state=INITIAL_STATE, action) => {
     case 'DATA_RESERVATION_EVENT':
       return {
         ...state,
-        dataEvent: action.payload,
+        EventId: action.payload,
         loading: false,
         error: null,
       };
