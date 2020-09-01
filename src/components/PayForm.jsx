@@ -30,6 +30,27 @@ const PayForm = (props) => {
     console.log("Hola")
   }
 
+const PayForm = (props) => {
+
+  const { dataEvent, total , dataform } = props;
+  const [form, setValues] = useState();
+
+  const handleInput = event => {
+    setValues({...form,[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value })
+  }
+
+  const reservation = async () => {
+    await props.postReservation(dataEvent,total,dataform,);
+  };
+ 
+  const handleClick = async event => {
+    event.preventDefault();
+    props.setDataForm(form);
+    // reservation();
+    // props.history.push('/');
+    
+  }
+  // console.log(dataform)
 
   return (
     <section className='Reservation__PayForm'>
