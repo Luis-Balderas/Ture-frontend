@@ -14,15 +14,11 @@ const PayForm = (props) => {
     setValues({...form,[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value })
   }
 
-  const handleClickCancel = event => {
-    props.history.push('/');
-  }
-
   const reservation = async () => {
     await props.postReservation(dataEvent,total,dataform);
   };
  
-  const handleClick = async (event) => {
+  const handleClick = async event => {
     event.preventDefault();
     props.setDataForm(form);
     // reservation();
