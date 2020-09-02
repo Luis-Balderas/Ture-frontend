@@ -4,6 +4,8 @@ import '../assets/styles/components/PayForm.scss';
 import Button from './Button';
 import { setDataForm } from '../redux/actions/reservationsActions';
 // import { postReservation } from '../redux/actions/reservationsActions';
+<<<<<<< HEAD
+=======
 
 const PayForm = (props) => {
 
@@ -19,7 +21,7 @@ const PayForm = (props) => {
   }
 
   const reservation = async () => {
-    await props.postReservation(dataEvent,total,dataform);
+    await props.postReservation(dataEvent,total,dataform,);
   };
  
   const handleClick = async (event) => {
@@ -27,8 +29,36 @@ const PayForm = (props) => {
     props.setDataForm(form);
     // reservation();
     // props.history.push('/');
+    console.log("Hola")
+  }
+>>>>>>> ebe54f7307c725819d91f62f6c6d6708d7b1a7da
+
+const PayForm = (props) => {
+
+  const { dataEvent, total , dataform } = props;
+  const [form, setValues] = useState();
+
+  const handleInput = event => {
+    setValues({...form,[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value })
+  }
+
+  const reservation = async () => {
+    await props.postReservation(dataEvent,total,dataform);
+  };
+ 
+  const handleClick = async event => {
+    event.preventDefault();
+    props.setDataForm(form);
+    // reservation();
+    // props.history.push('/');
+<<<<<<< HEAD
     console.log(dataform)
   }
+=======
+    
+  }
+  // console.log(dataform)
+>>>>>>> ebe54f7307c725819d91f62f6c6d6708d7b1a7da
 
   return (
     <section className='Reservation__PayForm'>
