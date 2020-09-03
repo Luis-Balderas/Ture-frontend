@@ -18,12 +18,16 @@ const PayForm = (props) => {
     await props.postReservation(dataEvent,total,dataform);
   };
  
-  const handleClick = async event => {
+  const handleClick = () =>{
     event.preventDefault();
     props.setDataForm(form);
     // reservation();
     // props.history.push('/');
     console.log(dataform)
+  }
+
+  const   handleClickCancel = () => {
+    // props.history.push('/');
   }
 
   return (
@@ -104,8 +108,8 @@ const PayForm = (props) => {
         </div>
       </form>
       <div className="Reservation__PayForm--button">
-        <Button data="Cancelar" onClick={(event) => handleClickCancel(event)}/>
-        <Button data="Confirmar" onClick={(event) => handleClick(event)}/>
+        <Button data="Cancelar" onClick={handleClickCancel}/>
+        <Button data="Confirmar" onClick={handleClick}/>
       </div>
     </section>
   );

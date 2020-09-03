@@ -1,84 +1,107 @@
-.card-Inicio{
-    display: grid;
-    justify-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+@import '../vars.scss';
+@import '../functions.scss';
 
-.registro-Conteiner{
-    display: grid;
-    justify-items: center;
-    border: 1px solid black;
-    width: 450px;
-    height: 700px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 20px;
-}
+.login {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  height: 100%;
 
-.conteiner-Inputs {
-    margin-top: 60px;
-}
-.conteiner-Inputs input{
-   display: grid;
-   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-   height: 40px;
-   width: 350px;
-   margin-top: 60px;
-   border: white;
-   border-bottom: 1px solid black;
-}
-
-.Link{
-    display: flex;
-    justify-content: space-between; 
-}
-.conteiner-Recuerdame {
-    margin-top: 20px;
-}
-.contenier-Registro{
-    margin-left: 60px;
-}
-
-button{
-    height: 50px;
-    width: 200px;
+  & button {
+    height: 40px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 21px;
+    color: $color-white;
+    margin: 20px 10px;
+    padding: 10px;
+    border: none;
     border-radius: 10px;
-    border:none;
-    background-color: #FF5A5F;
-    color: white;
-}
+    background-color: $color-main;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 4px 4px #afa8a9;
+    }
+  }
 
-.img-Facebook{
-    display: grid;
-    grid-template-columns: 50px 1fr;
-}
-.img-Facebook h4{
-    margin-left: 30px;
-}
-.img-Facebook img{
-   height: 50px;
-}
+  & > button {
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-.img-Google{
-    display: grid;
-    grid-template-columns: 50px 1fr;
-}
-.img-Google h4{
-    margin-left: 30px;
-}
-.img-Google img{
-    height: 50px;
- }
+  &__form {
+    & input {
+      margin: 5px 0;
+      width: 100%;
+      height: 70%;
+      padding: 10px 15px;
+      background: get-opacity($color-black, 0.03);
+      border: 1px solid get-opacity($color-black, 0.7);
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+  }
+  &__button {
+    display:flex;
+    justify-content: center;
+  }
 
-.link-Registrar{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
- }
- .link-Registrar h5{
-   margin-top: 20px;
- }
-.link-Registrar a{
-    margin-top: 20px;
-}
+  &__remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & label {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+    & a {
+      color: $color-black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
+  &__social{
+    margin: 20px 0;
+    & img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    & p {
+      margin: 0 20px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+    &--item{
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+    }
+  }
+
+  &__singup {
+    text-align: center;
+    & p {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    & a {
+      color: $color-black;
+      font-size: 16px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

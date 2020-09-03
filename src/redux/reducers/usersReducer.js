@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
   error: null,
   loading: false,
-  dataUsers: '',
+  dataUsers: undefined,
 };
 
 export default (state = INITIAL_STATE, action) => {
