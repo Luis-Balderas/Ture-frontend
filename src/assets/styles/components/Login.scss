@@ -90,13 +90,13 @@
     }
   }
 
-  &__singup {
+  &__signup {
     text-align: center;
     & p {
       font-size: 18px;
-      font-weight: bold;
     }
     & a {
+      font-weight: bold;
       color: $color-black;
       font-size: 16px;
       &:hover {

@@ -7,7 +7,7 @@ import '../assets/styles/components/Login.scss';
 import googleIcon from '../assets/img/googleicon.svg';
 import facebookIcon from '../assets/img/facebookicon.svg';
 
-const LogIn = (props) => {
+const SignUp = (props) => {
 
   const [modalIsClose, setModalIsClose] = useState(false);
 
@@ -21,6 +21,8 @@ const LogIn = (props) => {
         <button onClick={handleCloseModal}><strong>X</strong></button>
         <div className="login__form">
           <form>
+            <input type="text" name="" id="" placeholder="Nombre" />
+            <input type="text" name="" id="" placeholder="Apellido" />
             <input type="email" name="" id="" placeholder="Email" />
             <input type="password" name="" id="" placeholder="Contraseña" />
           </form>
@@ -28,7 +30,7 @@ const LogIn = (props) => {
 
         <div className="login__button">
           <button>
-            Iniciar Sesión
+            Registrarse
           </button>
         </div>
 
@@ -54,11 +56,11 @@ const LogIn = (props) => {
         </div> */}
 
         <div className="login__signup">
-          <p>¿No tienes cuenta?</p>
-          <a href="">Registrarse</a>
+          <p>¿Ya Estas Registrado?</p>
+          <a href="">Iniciar Sesión</a>
         </div>
     </div>
   </Modal>
 };
 
-export default LogIn;
+export default SignUp;

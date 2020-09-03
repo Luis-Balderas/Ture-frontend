@@ -5,13 +5,22 @@ import '../assets/styles/components/Header.scss';
 import Button from './Button';
 import Search from './SearchHeader';
 import LogIn from './LogIn';
+import SignUp from './SignUp';
 
 const Header = () => {
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalLoginIsOpen, setModalIsOpen] = useState(false);
+  const [modalSignUpIsOpen , setModalSignUpIsOpen ] = useState(false);
 
-  const handleOpenModal = e => {
+  const handleOpenLoginModal = e => {
+    setModalSignUpIsOpen(false);
     setModalIsOpen(true)
+    // console.log(modalIsOpen)
+  }
+
+  const handleOpenSignModal = e => {
+    setModalIsOpen(false);
+    setModalSignUpIsOpen(true)
     // console.log(modalIsOpen)
   }
 
@@ -24,13 +33,19 @@ const Header = () => {
       <Search />
       <div className="header__button" >
         <button
-          onClick={handleOpenModal}>
+          onClick={handleOpenLoginModal}>
           Iniciar Sesión
         </button>
         <LogIn
-          isOpen={modalIsOpen}
+          isOpen={modalLoginIsOpen}
         />
-        <Button data="Registrarse" />
+        <button
+          onClick={handleOpenSignModal}>
+          Registrarse
+        </button>
+        <SignUp
+            isOpen={modalSignUpIsOpen}
+        />
       </div>
     </header>
   );
