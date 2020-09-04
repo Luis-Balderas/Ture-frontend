@@ -23,7 +23,6 @@ const PayForm = (props) => {
     props.setDataForm(form);
     // reservation();
     // props.history.push('/');
-    console.log(dataform)
   }
 
   const   handleClickCancel = () => {
@@ -52,7 +51,8 @@ const PayForm = (props) => {
             name="firsName"
             aria-label="firsName"
             type="text" 
-            placeholder="Nombre">
+            placeholder="Nombre"
+            onChange={handleInput}>
           </input>
         </div>
         <div>
@@ -61,7 +61,8 @@ const PayForm = (props) => {
             name="LastName"
             aria-label="LastName"
             type="text" 
-            placeholder="Apellido">
+            placeholder="Apellido"
+            onChange={handleInput}>
           </input>
         </div>
         <div>
@@ -70,7 +71,8 @@ const PayForm = (props) => {
             name="Postal Code"
             aria-label="Postal Code"
             type="text" 
-            placeholder="Código Postal">
+            placeholder="Código Postal"
+            onChange={handleInput}>
           </input>
         </div>
         <div>
@@ -79,7 +81,8 @@ const PayForm = (props) => {
             name="country"
             aria-label="country"
             type="text" 
-            placeholder="Colombia">
+            placeholder="Colombia"
+            onChange={handleInput}>
           </input>
         </div>
         <div  className='Reservation__PayForm--pay1'>
@@ -109,7 +112,7 @@ const PayForm = (props) => {
       </form>
       <div className="Reservation__PayForm--button">
         <Button data="Cancelar" onClick={handleClickCancel}/>
-        <Button data="Confirmar" onClick={handleClick}/>
+        <button onClick={handleClick}><strong>Confirmar</strong></button>
       </div>
     </section>
   );

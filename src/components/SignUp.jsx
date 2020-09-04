@@ -22,7 +22,6 @@ const SignUp = (props) => {
         <div className="login__form">
           <form>
             <input type="text" name="" id="" placeholder="Nombre" />
-            <input type="text" name="" id="" placeholder="Apellido" />
             <input type="email" name="" id="" placeholder="Email" />
             <input type="password" name="" id="" placeholder="Contraseña" />
           </form>
@@ -46,11 +45,11 @@ const SignUp = (props) => {
 
         {/* <div className="login__social">
           <div className="login__social--item">
-            <img src={googleIcon} alt="" />
+            <figure><img src={googleIcon} alt="" /></figure>
             <p>Iniciar sesión con Gmail</p>
           </div>
           <div className="login__social--item">
-            <img src={facebookIcon} alt="" />
+            <figure><img src={facebookIcon} alt="" /></figure>
             <p>Iniciar sesión con Facebook</p>
           </div>
         </div> */}

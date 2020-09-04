@@ -95,6 +95,7 @@
     justify-content: flex-end;
     align-items: end;
     & button {
+      width: 150px;
       height: 40px;
       color: $color-white;
       margin: 10px;
@@ -103,9 +104,6 @@
       border-radius: 10px;
       background-color: $color-main;
       cursor: pointer;
-      & p{
-      margin: 0;
-      }
       &:hover {
           box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
       }
