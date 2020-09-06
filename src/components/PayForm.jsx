@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
+import {connect} from 'react-redux';
 import '../assets/styles/components/PayForm.scss';
+import Button from './Button';
+import { setDataForm } from '../redux/actions/reservationsActions';
+// import { postReservation } from '../redux/actions/reservationsActions';
 
-const PayForm = () => {
+const PayForm = (props) => {
+
+  const { dataEvent, total , dataform } = props;
+  const [form, setValues] = useState();
+
+  const handleInput = event => {
+    setValues({...form,[event.target.name]: event.target.type === 'checkbox' ? event.target.checked : event.target.value })
+  }
+
+  const reservation = async () => {
+    await props.postReservation(dataEvent,total,dataform);
+  };
+ 
+  const handleClick = () =>{
+    event.preventDefault();
+    props.setDataForm(form);
+    // reservation();
+    // props.history.push('/');
+  }
+
+  const   handleClickCancel = () => {
+    // props.history.push('/');
+  }
 
   return (
     <section className='Reservation__PayForm'>
       <span><h5>Confirmar y Pagar</h5></span>
       <form  action="" className='Reservation__PayForm--items'>
         <div className='Reservation__PayForm--pay'>
-          <p>Medio de Pago</p>
+          <label>Medio de Pago</label>
           <input
             name="methodPay"
             aria-label="methodPay"
@@ -19,40 +45,44 @@ const PayForm = () => {
           </input>
         </div>
         <div>
-          <p>Nombre</p>
+          <label>Nombre</label>
           <input
             // value={userById.name}
             name="firsName"
             aria-label="firsName"
             type="text" 
-            placeholder="Nombre">
+            placeholder="Nombre"
+            onChange={handleInput}>
           </input>
         </div>
         <div>
-          <p>Apellido</p>
+          <label>Apellido</label>
           <input 
             name="LastName"
             aria-label="LastName"
             type="text" 
-            placeholder="Apellido">
+            placeholder="Apellido"
+            onChange={handleInput}>
           </input>
         </div>
         <div>
-          <p>Informacion de facturación</p>
+          <label>Informacion de facturación</label>
           <input 
             name="Postal Code"
             aria-label="Postal Code"
             type="text" 
-            placeholder="Código Postal">
+            placeholder="Código Postal"
+            onChange={handleInput}>
           </input>
         </div>
         <div>
-          <p>Pais/Región</p>
+          <label>Pais/Región</label>
           <input 
             name="country"
             aria-label="country"
             type="text" 
-            placeholder="Colombia">
+            placeholder="Colombia"
+            onChange={handleInput}>
           </input>
         </div>
         <div  className='Reservation__PayForm--pay1'>
@@ -65,7 +95,7 @@ const PayForm = () => {
             </input>
             <strong>Pago único</strong>
           </label>
-          <p>$442.000</p>
+          <label>${total}</label>
         </div>
         <div  className='Reservation__PayForm--pay2'>
           <label>
@@ -81,16 +111,16 @@ const PayForm = () => {
         </div>
       </form>
       <div className="Reservation__PayForm--button">
-        {/* <Button data="Confirmar" onClick={handleClick} /> */}
-        <button type='button'>
-          <strong>Cancelar</strong>
-        </button >
-        <button type='button'>
-          <strong>Confirmar</strong>
-        </button >
+        <Button data="Cancelar" onClick={handleClickCancel}/>
+        <button onClick={handleClick}><strong>Confirmar</strong></button>
       </div>
     </section>
   );
 };
 
-export default PayForm;
+const mapToStateToProps = ({ reservationsReducer }) => reservationsReducer;
+const mapDispatchToProps = {
+    setDataForm,
+    // postReservation,
+};
+export default connect(mapToStateToProps, mapDispatchToProps)(PayForm);
