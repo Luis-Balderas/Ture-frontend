@@ -7,7 +7,7 @@ import Search from './SearchHeader';
 
 const Header = () => (
   <header className='header'>
-    <Link className='brand' to='/'>
+    <Link className='brand text-reset text-decoration-none' to='/'>
       <img className='brand__logo' src={Logo} alt='Logo' />
       <h1>Ture</h1>
     </Link>

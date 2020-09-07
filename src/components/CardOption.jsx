@@ -5,11 +5,11 @@ import IconStar from '../assets/img/star.png';
 import '../assets/styles/components/CardOption.scss';
 
 const CardOption = ({ item }) => {
-  const { id, eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventLocale, eventDetails } = item;
+  const { eventUrlImage, priceLocation, pricePeople, eventDisponibility, eventTitle, eventDetails } = item;
   return (
     <div className='cardOption'>
       <div className='cardOption__container'>
-        <Link to={`events/${id}`} className='cardOption__link'>
+        <Link className='cardOption__link text-reset text-decoration-none' to={`/event/${item.id}`}>
           <img src={eventUrlImage} alt='Imagen de Evento' />
         </Link>
         <div className='cardOption__details'>
@@ -17,9 +17,9 @@ const CardOption = ({ item }) => {
             <p>
               <small>Estadía opcional ({eventDisponibility})</small>
             </p>
-            <a href={eventLocale}>
+            <Link className='text-reset text-decoration-none' to={`/event/${item.id}`}>
               <h5>{eventTitle}</h5>
-            </a>
+            </Link>
           </div>
 
           <figure>

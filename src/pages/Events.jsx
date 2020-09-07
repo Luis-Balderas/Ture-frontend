@@ -1,8 +1,9 @@
 import React from 'react';
-import '../assets/styles/pages/Events.scss';
-import { Link } from 'react-router-dom';
-import CardOption from '../components/CardOption';
+
+import CardsList from '../components/CardsList';
 import Mapita from '../components/Mapita';
+
+import '../assets/styles/pages/Events.scss';
 
 const Events = () => {
   const data = [
@@ -23,7 +24,7 @@ const Events = () => {
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
         'https://www.airbnb.com.co/rooms/20870347?location=granada&previous_page_section_name=1000&federated_search_id=26052e9b-59dc-4591-b857-ff2ea50a585b',
-      eventTitle: 'El llanerazo',
+      eventTitle: 'La maca',
       eventDisponibility: 'Con disponibilidad',
       pricePeople: '100.000',
       priceLocation: '80.000',
@@ -34,7 +35,7 @@ const Events = () => {
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
         'https://www.airbnb.com.co/rooms/20870347?location=granada&previous_page_section_name=1000&federated_search_id=26052e9b-59dc-4591-b857-ff2ea50a585b',
-      eventTitle: 'El llanerazo',
+      eventTitle: 'El perro',
       eventDisponibility: 'Con disponibilidad',
       pricePeople: '100.000',
       priceLocation: '80.000',
@@ -45,7 +46,7 @@ const Events = () => {
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
         'https://www.airbnb.com.co/rooms/20870347?location=granada&previous_page_section_name=1000&federated_search_id=26052e9b-59dc-4591-b857-ff2ea50a585b',
-      eventTitle: 'El llanerazo',
+      eventTitle: 'El erizo',
       eventDisponibility: 'Con disponibilidad',
       pricePeople: '100.000',
       priceLocation: '80.000',
@@ -56,7 +57,7 @@ const Events = () => {
       eventDetails: 'Plan 2 dias. Estadia opcional. wifi. Zona de lavado. Zona de camping. Desayuno y almuerzo',
       eventLocale:
         'https://www.airbnb.com.co/rooms/20870347?location=granada&previous_page_section_name=1000&federated_search_id=26052e9b-59dc-4591-b857-ff2ea50a585b',
-      eventTitle: 'El llanerazo',
+      eventTitle: 'El llanerazo monstruo',
       eventDisponibility: 'Con disponibilidad',
       pricePeople: '100.000',
       priceLocation: '80.000',
@@ -74,13 +75,7 @@ const Events = () => {
         </div>
 
         <section className='EventsCardsOption'>
-          {data.map((item) => {
-            return (
-              <Link className='text-reset text-decoration-none' to={`/event/${item.id}`}>
-                <CardOption key={item.id} item={item} />
-              </Link>
-            );
-          })}
+          <CardsList data={data} />
         </section>
       </div>
 

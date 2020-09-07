@@ -18,11 +18,12 @@
     .EventsCardsOption {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 700px));
+      justify-content: center;
     }
   }
 
   .mapitaContainer {
-    margin: 0 auto;
+    margin: 2px auto;
   }
 }
 

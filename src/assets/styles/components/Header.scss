@@ -1,12 +1,13 @@
+@import '../vars';
 
 .header {
-    background-color: white;
+    background-color: $color-white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 2px $color-black;
 }
 
 .brand {
@@ -31,9 +32,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    
+    border: 2px solid $color-black;
+    border-radius: 50px;
 
     &__input {
         display: flex;
@@ -61,7 +61,7 @@
         border-right: 1px solid gray;
         padding: 0 20px;
         cursor: pointer;
-        
+
     }
 
     &__category {
@@ -76,25 +76,37 @@
     }
 }
 
+.search:hover {
+    box-shadow: 1px 1px 5px $color-black;
+}
+
 .btnContainer {
     display: flex;
     align-items: center;
     margin: 0;
+    
+    &-btn:hover {
+        background-color: $color-main;
+        border: none;
+    }
 
     &-btn {
+
         font-style: normal;
         font-weight: bold;
         line-height: 21px;
-        color: white;
+        color: $color-black-secundary;
         margin: 10px;
         padding: 10px;
         border: none;
         border-radius: 10px;
-        background-color: #ff5a5f;
+        background-color: $color-white;
+        border: solid 2px $color-black;
         cursor: pointer;
 
         &:hover {
             box-shadow: 0px 4px 4px #afa8a9;
+            color: $color-white;
         }
 
         & p {
