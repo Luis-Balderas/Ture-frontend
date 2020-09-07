@@ -1,116 +1,147 @@
-@import '../vars';
+@import '../vars.scss';
+@import '../functions.scss';
 
 .header {
-    background-color: $color-white;
-    display: flex;
-    flex-wrap: wrap;
+  height: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;;
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid  get-opacity($color-black, 0.5);
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-areas: "logo buttons"
+                         "search search";
     justify-content: space-around;
-    align-items: center;
-    padding: 5px;
-    box-shadow: 1px 1px 2px $color-black;
-}
+  }
 
-.brand {
+  &__brand {
     display: flex;
+    align-items: center;
     text-decoration: none;
-    color: black;
-
-    &__logo {
-        margin: 15px;
-        width: 40px;
-        height: 40px;
+    color: $color-black;
+    @media (max-width: 767px) {
+      grid-area: logo;
     }
-
-    & h1 {
-        margin: auto 0;
+    & p {
+      margin: auto 5px;
+      font-size: 35px;
     }
-}
+    & img {
+      margin: 10px;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #FF5A5F;
+    }
+  }
 
-.search {
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  &__search {
+    width: 546px;
+    // width: 40%;
+    height: 40px;
+    // padding: 5px;
+    display: grid;
+    grid-template-columns: 45% 45% 10%;
     align-items: center;
-    border: 2px solid $color-black;
-    border-radius: 50px;
-
-    &__input {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0 20px;
-        border: white;
-
-
-        & img {
-            width: 25px;
-            margin-right: 5px;
-            cursor: pointer;
-        }
-
-        & input {
-            border: none;
-            width: 150px;
-            padding: 5px;
-            border: white;
-        }
+    background: get-opacity($color-black, 0.03);
+    border: 1px solid  get-opacity($color-black, 0.5);;
+    border-radius: 20px;
+    @media (max-width: 767px) {
+      grid-area: search ;
+    }
+    & img {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+    &:hover {
+      border-color: $color-main;
     }
 
-    &__date {
-        border-right: 1px solid gray;
-        padding: 0 20px;
+    &--input {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border: none;
+      & input {
+        border: none;
+        width: 100%;
+        padding: 5px;
+        background: get-opacity($color-black, 0);
+        &:focus {
+          outline: 0 none;
+        }
+      }
+    }
+
+    &--date {
+      & input {
+        width: 60%;
+        border: none;
+        background: get-opacity($color-black, 0);
         cursor: pointer;
-
-    }
-
-    &__category {
-        padding: 0 20px;
-        cursor: pointer;
-        & input {
-            border: none;
-            width: 150px;
-            padding: 5px;
-            border: white;
+        &:focus {
+          outline: 0 none;
         }
+      }
     }
-}
+  }
 
-.search:hover {
-    box-shadow: 1px 1px 5px $color-black;
-}
-
-.btnContainer {
+  &__button {
     display: flex;
     align-items: center;
     margin: 0;
-    
-    &-btn:hover {
-        background-color: $color-main;
-        border: none;
+    @media (max-width: 767px) {
+      grid-area: buttons;
     }
-
-    &-btn {
-
+    
+    & button {
+      @media (max-width: 767px) {
+        width: 150px;
+      }
+        height: 40px;
         font-style: normal;
         font-weight: bold;
         line-height: 21px;
-        color: $color-black-secundary;
+        color: $color-white;
         margin: 10px;
         padding: 10px;
         border: none;
         border-radius: 10px;
-        background-color: $color-white;
-        border: solid 2px $color-black;
+        background-color: $color-main;
         cursor: pointer;
 
-        &:hover {
-            box-shadow: 0px 4px 4px #afa8a9;
-            color: $color-white;
-        }
+      &:hover {
+          box-shadow: 0px 4px 4px #afa8a9;
+      }
+    }
+  }
+}
 
-        & p {
-            margin: 0;
-        }
+.fadeInDown{
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    from{
+    opacity: 0;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+    }
+    to{
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
     }
 }
