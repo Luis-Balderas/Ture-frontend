@@ -47,7 +47,10 @@ const CardPayment = (props) => {
   };
 
   const formattedDate = (date) => {
-    return date.slice(0, 10);
+    console.log('formattedDate -> date', date);
+    if (date !== undefined) {
+      return date.slice(0, 10);
+    }
   };
   return (
     <section className='payment'>

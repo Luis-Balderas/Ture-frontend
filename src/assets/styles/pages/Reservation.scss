@@ -3,9 +3,12 @@
 .Reservation {
   margin: 40px 5%;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 35%;
   gap: 10px 20px;
+  justify-content: center;
+
+
   @media (max-width: 800px) {
-    grid-template-columns: none;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
