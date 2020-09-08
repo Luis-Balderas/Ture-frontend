@@ -1,26 +1,26 @@
 const INITIAL_STATE = {
   error: null,
   loading: false,
-  dataUsers: '',
+  dataUsers: undefined,
+  dataUser: undefined,
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'DATA_USER':
+    case 'DATA_ALL_USER':
       return {
         ...state,
         dataUsers: action.payload,
         loading: false,
         error: null,
       };
-    case 'ADD_USER':
+    case 'DATA_USER':
       return {
         ...state,
-        isLogged: true,
+        dataUser: action.payload,
         loading: false,
         error: null,
       };
-
     default:
       return state;
   }

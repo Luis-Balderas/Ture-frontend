@@ -5,7 +5,7 @@ export const getAllUsers = () => async (dispatch) => {
     const data = await response.json();
     console.log('dataUser -> data', data);
     dispatch({
-      type: 'DATA_USER',
+      type: 'DATA_ALL_USER',
       payload: data.body,
     });
   } catch (err) {
@@ -13,30 +13,30 @@ export const getAllUsers = () => async (dispatch) => {
   }
 };
 
-export const createUser = (user, idEvent) => async (dispatch) => {
+export const getUser = (email, password) => async (dispatch) => {
   try {
-    const newUser = {
-      ...user,
-      event: idEvent,
-    };
-
-    const response = await fetch('http://localhost:3000/user/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newUser),
-    });
+    const response = await fetch('http://localhost:3000/user/');
     const data = await response.json();
     console.log('dataUser -> data', data);
-
-    if (data.error !== '') {
-      throw new Error(data.error);
-    }
     dispatch({
-      type: 'ADD_USER',
+      type: 'DATA_USER',
+      payload: { email, password },
     });
   } catch (err) {
-    console.log('createUser -> err', err);
+    console.log('getAllUsers -> err', err);
+  }
+};
+
+export const setUser = (user) => async (dispatch) => {
+  try {
+    const response = await fetch('http://localhost:3000/user/');
+    const data = await response.json();
+    console.log('dataUser -> data', data);
+    dispatch({
+      type: 'DATA_USER',
+      payload: user,
+    });
+  } catch (err) {
+    console.log('getAllUsers -> err', err);
   }
 };
