@@ -1,18 +1,18 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+// import Carousel from 'react-bootstrap/Carousel';
 import '../assets/styles/components/Carousel.scss';
 
 const ControlledCarousel = (props) => {
   const { images, id } = props;
   console.log('ControlledCarousel -> props', props);
   return (
-    <Carousel>
-      {images.map((img, i) => (
-        <Carousel.Item key={id + i}>
-          <img className='d-block w-100' src={img} alt='First slide' />
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <section className='carousel'>
+      <div className='carousel__items'>
+        {images.map((img, i) => (
+          <img src={img} alt='First slide' />
+        ))}
+      </div>
+    </section>
   );
 };
 
