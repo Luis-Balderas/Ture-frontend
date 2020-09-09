@@ -8,8 +8,8 @@
   grid-template-rows: auto;
   align-items: start;
 
-  & > span {
-      grid-column: 1 / -1;
+  &>span {
+    grid-column: 1 / -1;
   }
 
   & h5 {
@@ -22,11 +22,13 @@
     width: 100%;
     height: min-content;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 10px 20px;
+
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
     }
+
     & input {
       width: 100%;
       padding: 10px 15px;
@@ -35,18 +37,20 @@
       box-sizing: border-box;
       border-radius: 10px;
     }
+
     & label {
       margin: 12px 0;
       font-weight: bold;
     }
-    & p{
+
+    & p {
       margin: 12px 10px;
       font-weight: bold;
     }
   }
 
   &--pay {
-      grid-column: 1 / -1;
+    grid-column: 1 / -1;
   }
 
   &--pay1 {
@@ -58,11 +62,13 @@
     box-sizing: border-box;
     border-radius: 10px;
     grid-column: 1 / -1;
+
     & label {
-      display:flex;
+      display: flex;
       justify-content: flex-start;
-      align-items:center;
+      align-items: center;
     }
+
     & input {
       margin: 10px;
       width: 20px;
@@ -77,23 +83,26 @@
     box-sizing: border-box;
     border-radius: 10px;
     grid-column: 1 / -1;
+
     & label {
-      display:flex;
+      display: flex;
       justify-content: flex-start;
-      align-items:center;
+      align-items: center;
     }
+
     & input {
       margin: 10px;
       width: 20px;
       height: 20px;
     }
   }
-  
-  &--button{
+
+  &--button {
     height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: end;
+
     & button {
       width: 150px;
       height: 40px;
@@ -104,8 +113,9 @@
       border-radius: 10px;
       background-color: $color-main;
       cursor: pointer;
+
       &:hover {
-          box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
+        box-shadow: 5px 5px 8px get-opacity($color-black, 0.5);
       }
     }
   }

@@ -20,14 +20,14 @@ const EventDetails = (props) => {
     getEventDetail();
   }, []);
 
-  console.log('EventDetails -> props', props);
+  console.log('EventDetails -> eventById', eventById);
   if (!eventById) {
     return '';
   }
   return (
     <section className='event_details'>
       <div className='event_details__carousel'>
-        <Carousel images={eventById.images} />
+        <Carousel images={eventById.images} id={eventById._id} />
       </div>
       <div className='event_details__content'>
         <div className='event_details__container'>
@@ -35,7 +35,7 @@ const EventDetails = (props) => {
             <CardDescription data={eventById} />
           </div>
           <div className='event_details__container--payment'>
-            <CardPayment data={eventById} />
+            <CardPayment props={props} />
           </div>
         </div>
       </div>

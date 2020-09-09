@@ -15,12 +15,12 @@ export default (state = INITIAL_STATE, action) => {
         error: null,
       };
     case 'DATA_USER':
-    return {
-      ...state,
-      dataUser: action.payload,
-      loading: false,
-      error: null,
-    };
+      return {
+        ...state,
+        dataUser: action.payload,
+        loading: false,
+        error: null,
+      };
     default:
       return state;
   }

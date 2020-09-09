@@ -13,14 +13,14 @@ export const getAllUsers = () => async (dispatch) => {
   }
 };
 
-export const getUser = (email,password) => async (dispatch) => {
+export const getUser = (email, password) => async (dispatch) => {
   try {
     const response = await fetch('http://localhost:3000/user/');
-    // const data = await response.json();
-    // console.log('dataUser -> data', data);
+    const data = await response.json();
+    console.log('dataUser -> data', data);
     dispatch({
       type: 'DATA_USER',
-      payload: email,password,
+      payload: { email, password },
     });
   } catch (err) {
     console.log('getAllUsers -> err', err);
@@ -40,7 +40,3 @@ export const setUser = (user) => async (dispatch) => {
     console.log('getAllUsers -> err', err);
   }
 };
-
-
-
-
