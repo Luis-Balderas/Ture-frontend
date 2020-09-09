@@ -1,47 +1,28 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/components/CardPayment.scss';
+import { setDataEvent } from '../redux/actions/reservationsActions';
+import Price from './Price';
 
 const CardPayment = (props) => {
   const [value, setValue] = useState(1);
-  const { events } = props;
+  const { events, reservation } = props;
   const {
     events: { eventById },
   } = props;
-
-  const getValues = () => {
-    if (eventById) {
-      const { price } = eventById;
-      const percentage = 0.1;
-      const service = 26000;
-      let newPrice = 0;
-      if (value > 0) {
-        newPrice = price * value;
-      } else {
-        newPrice = price * 1;
-      }
-
-      const iva = newPrice * percentage;
-      const valueIva = newPrice + iva;
-      const total = newPrice + iva + service;
-
-      return { newPrice, iva, valueIva, service, total };
-    }
-  };
-  const { newPrice, iva, valueIva, service, total } = getValues();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
   };
 
   const handleClick = (e) => {
+    const eventData = {
+      event: { ...eventById },
+      value,
+    };
+    props.setDataEvent(eventData);
     events.isReservation = true;
     props.props.history.push('/reservation');
-    // const eventData = {
-    //   value,
-    //   total,
-    // };
-    // reservation.setEvents(eventData);
   };
 
   const formattedDate = (date) => {
@@ -89,7 +70,7 @@ const CardPayment = (props) => {
           <div className='payment__card--main'>
             <h5>N° de boletas</h5>
             {events.isReservation ? (
-              <p>{value}</p>
+              <p>{reservation.event.value}</p>
             ) : (
               <form onSubmit={handleSubmit}>
                 <input
@@ -106,28 +87,7 @@ const CardPayment = (props) => {
           </div>
         </div>
         <div className='payment__details'>
-          <div className='payment__details--price'>
-            <p>
-              ${eventById.price} x {value || 1} boletas{' '}
-            </p>
-            <p className='value'>${newPrice}</p>
-          </div>
-          <div className='payment__details--price'>
-            <p>IVA(10%)</p>
-            <p className='value'>${iva}</p>
-          </div>
-          <div className='payment__details--price'>
-            <p>Valor con IVA</p>
-            <p className='value'>${valueIva}</p>
-          </div>
-          <div className='payment__details--price'>
-            <p>Tarifa del servicio</p>
-            <p className='value'>${service}</p>
-          </div>
-          <div className='payment__details--price total'>
-            <p>Total</p>
-            <p className='value'>${total}</p>
-          </div>
+          <Price price={eventById.price} value={events.isReservation ? reservation.event.value : value} events={events} />
           {events.isReservation ? (
             <p>Hola</p>
           ) : (
@@ -146,9 +106,12 @@ const CardPayment = (props) => {
 const mapToStateToProps = (state) => {
   return {
     events: state.eventsReducer,
+    reservation: state.reservationsReducer,
   };
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  setDataEvent,
+};
 
 export default connect(mapToStateToProps, mapDispatchToProps)(CardPayment);
