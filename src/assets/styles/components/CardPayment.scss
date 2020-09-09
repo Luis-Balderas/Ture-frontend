@@ -21,6 +21,26 @@
     }
   }
 
+  &__image {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--description {
+      padding-right: 10px;
+    }
+
+    .title {
+      width: 200px;
+
+      img {
+        border-radius: 20px;
+
+      }
+    }
+  }
+
   &__card {
     border: 1px solid black;
     border-radius: 15px;
