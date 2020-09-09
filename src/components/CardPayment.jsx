@@ -31,13 +31,11 @@ const CardPayment = (props) => {
   const { newPrice, iva, valueIva, service, total } = getValues();
 
   const handleSubmit = (evt) => {
-    console.log('handleSubmit -> evt', evt);
     evt.preventDefault();
   };
 
   const handleClick = (e) => {
     events.isReservation = true;
-    console.log('props', props);
     props.props.history.push('/reservation');
     // const eventData = {
     //   value,
@@ -47,7 +45,6 @@ const CardPayment = (props) => {
   };
 
   const formattedDate = (date) => {
-    console.log('formattedDate -> date', date);
     if (date !== undefined) {
       return date.slice(0, 10);
     }

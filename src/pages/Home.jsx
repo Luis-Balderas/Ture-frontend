@@ -16,7 +16,7 @@ const Home = (props) => {
   if (!dataEvents) {
     return '';
   }
-  console.log('Home -> props', props);
+
   return (
     <div className='Home'>
       <section className='mainTitle'>
@@ -32,7 +32,6 @@ const Home = (props) => {
               <div>
                 <div>
                   <CardBasic data={event} key={`${event._id}cc`} />
-                  {console.log(`${event._id}cc`)}
                 </div>
               </div>
             );
@@ -51,9 +50,6 @@ const Home = (props) => {
               if (index < 3) {
                 return false;
               }
-              {
-                console.log(event._id + 1);
-              }
               return <CardBasic data={event} key={event._id + 1} />;
             })}
           </div>
@@ -64,18 +60,12 @@ const Home = (props) => {
               if (index === 0) {
                 return <CardBasic data={event} key={event._id + 3} />;
               }
-              {
-                console.log(event._id + 3);
-              }
             })}
           </div>
           <div>
             {dataEvents.map((event, index) => {
               if (index === 1) {
                 return <CardBasic data={event} key={event._id + 4} />;
-              }
-              {
-                console.log(event._id + 4);
               }
             })}
           </div>

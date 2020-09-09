@@ -1,12 +1,10 @@
 import React from 'react';
-
-import '../assets/styles/components/Mapita.scss';
-
 import mapita from '../assets/img/mapita.png';
+import '../assets/styles/components/Mapita.scss';
 
 const Mapita = () => {
   return (
-    <figure>
+    <figure className='content'>
       <img className='mapita' src={mapita} alt='Mapa con sitios de aventura' />
     </figure>
   );
