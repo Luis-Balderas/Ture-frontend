@@ -1,5 +1,4 @@
-
-export const postReservation = (eventId,userId,total,dataform) => async () => {
+export const postReservation = (eventId, userId, total, dataform) => async () => {
   try {
     // const response = await fetch(`http://localhost:3000/reservation/${id.id}`);
   } catch (err) {
@@ -7,10 +6,11 @@ export const postReservation = (eventId,userId,total,dataform) => async () => {
   }
 };
 
-export const setDataEvent = (eventId) => async (dispatch) => {
+export const setDataEvent = (event) => async (dispatch) => {
+  console.log('setDataEvent -> event', event);
   dispatch({
     type: 'DATA_RESERVATION_EVENT',
-    payload: eventId,
+    payload: event,
   });
 };
 

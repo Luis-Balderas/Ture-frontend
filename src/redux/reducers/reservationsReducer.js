@@ -5,14 +5,15 @@ const INITIAL_STATE = {
   // userId: '';
   // total:'',
   dataform: '',
+  event: {},
 };
 
-export default (state=INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'DATA_RESERVATION_EVENT':
       return {
         ...state,
-        EventId: action.payload,
+        event: action.payload,
         loading: false,
         error: null,
       };
