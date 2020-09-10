@@ -45,8 +45,9 @@ const SignUp = (props) => {
           </div>
           <div className='container-Registro'>{/* <a href=''>Olvidé mi contraseña</a> */}</div>
         </div>
+      </div>
 
-        {/* <div className="login__social">
+      {/* <div className="login__social">
           <div className="login__social--item">
             <figure><img src={googleIcon} alt="" /></figure>
             <p>Iniciar sesión con Gmail</p>
@@ -57,11 +58,11 @@ const SignUp = (props) => {
           </div>
         </div> */}
 
-        <div className='login__signup'>
-          <p>¿Ya Estas Registrado?</p>
-          {/* <a href=''>Iniciar Sesión</a> */}
-        </div>
+      <div className='login__signup'>
+        <p>¿Ya Estas Registrado?</p>
+        {/* <a href=''>Iniciar Sesión</a> */}
       </div>
+      {/* </div> */}
     </Modal>
   );
 };

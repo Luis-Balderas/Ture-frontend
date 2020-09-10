@@ -8,13 +8,16 @@
 .cardOption {
   margin: 0;
 
+  &__container:hover {
+    box-shadow: 2px 2px 15px $color-black;
+  }
   &__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin: 20px;
-    background-color: white;
+    background-color: get-opacity($color-background,0.3);
     border-radius: 20px;
-    border:1px solid black
+    box-shadow: 2px 2px 5px $color-black;
 
   }
 

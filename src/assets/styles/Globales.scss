@@ -15,15 +15,18 @@ body {
 
 h1 {
     font-size: 40px;
+    color: $color-black;
 }
 
 h3 {
     font-size: 30px;
+    color: $color-black;
 }
 
 h5 {
     font-size: 18px;
     font-weight: 700;
+    color: $color-black;
 }
 
 p,
@@ -51,4 +54,8 @@ img {
 main {
     background-color: #8f9cd5;
     height: 100%;
+}
+
+.list-events {
+    list-style: none;
 }
