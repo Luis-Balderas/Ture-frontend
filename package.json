@@ -1,15 +1,32 @@
 {
-  "name": "proyectosimulacro",
+  "name": "ture",
   "version": "1.0.0",
-  "description": "",
+  "description": "Clone Airbnb",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
-  "keywords": [],
-  "author": "",
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luis-Balderas/Ture-frontend.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "ReactJs",
+    "Webpack",
+    "Babel",
+    "React-router",
+    "Redux"
+  ],
+  "authors": [
+    "Brahianf Hurtado <brahianf@unicauca.edu.co>",
+    "Carol Masmela <carolstefannym@gmail.com>",
+    "Harold Peñaloza<hspe2507@gmail.com>",
+    "Juan Cardenas <sebastian960714@gmail.com>",
+    "Luis Balderas <bluisqr@gmail.com>"
+  ],
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
