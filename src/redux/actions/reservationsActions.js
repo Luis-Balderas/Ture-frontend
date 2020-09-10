@@ -7,7 +7,6 @@ export const postReservation = (eventId, userId, total, dataform) => async () =>
 };
 
 export const setDataEvent = (event) => async (dispatch) => {
-  console.log('setDataEvent -> event', event);
   dispatch({
     type: 'DATA_RESERVATION_EVENT',
     payload: event,

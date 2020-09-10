@@ -179,6 +179,16 @@
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
     "jsx-a11y/media-has-caption": 0,
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "labelComponents": [],
+        "labelAttributes": [],
+        "controlComponents": [],
+        "assert": "htmlFor",
+        "depth": 25
+      }
+    ],
     "react/display-name": 0,
     "react/jsx-boolean-value": 0,
     "react/jsx-closing-bracket-location": 2,

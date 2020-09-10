@@ -3,7 +3,6 @@ export const getAllUsers = () => async (dispatch) => {
   try {
     const response = await fetch('http://localhost:3000/user/');
     const data = await response.json();
-    console.log('dataUser -> data', data);
     dispatch({
       type: 'DATA_ALL_USER',
       payload: data.body,
@@ -17,7 +16,7 @@ export const getUser = (email, password) => async (dispatch) => {
   try {
     const response = await fetch('http://localhost:3000/user/');
     const data = await response.json();
-    console.log('dataUser -> data', data);
+    console.log('getUser -> data', data);
     dispatch({
       type: 'DATA_USER',
       payload: { email, password },

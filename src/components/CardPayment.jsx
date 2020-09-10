@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import '../assets/styles/components/CardPayment.scss';
 import { setDataEvent } from '../redux/actions/reservationsActions';
+import Button from './Button';
 import Price from './Price';
 
 const CardPayment = (props) => {
@@ -22,7 +24,7 @@ const CardPayment = (props) => {
     };
     props.setDataEvent(eventData);
     events.isReservation = true;
-    props.props.history.push('/reservation');
+    props.history.push('/reservation');
   };
 
   const formattedDate = (date) => {
@@ -80,6 +82,7 @@ const CardPayment = (props) => {
                   max={eventById.ocupation}
                   disabled={events.isReservation}
                   type='number'
+                  value={value}
                   onChange={(e) => setValue(e.target.value)}
                 />
               </form>
@@ -89,12 +92,19 @@ const CardPayment = (props) => {
         <div className='payment__details'>
           <Price price={eventById.price} value={events.isReservation ? reservation.event.value : value} events={events} />
           {events.isReservation ? (
-            <p>Hola</p>
+            <div className='isReservation'>
+              <div className='item'>
+                <p className='bold'>Reserve esto ahora por ${reservation.event.value * eventById.price * 0.4}</p>
+                <p>Page el resto el 12 de diciembre</p>
+              </div>
+              <div className='item'>
+                <p className='bold'>Cancelación gratuita por 48 horas </p>
+                <p>Si cancelas dentro de las 48 horas después de haber realizado la reservación, puedes obterner un reembolso total.</p>
+              </div>
+            </div>
           ) : (
             <div className='payment__details--btn'>
-              <button type='submit' onClick={(e) => handleClick(e)}>
-                Reservar
-              </button>
+              <Button data='Reservar' type='submit' onClick={(e) => handleClick(e)} />
             </div>
           )}
         </div>
@@ -114,4 +124,4 @@ const mapDispatchToProps = {
   setDataEvent,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardPayment);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CardPayment));

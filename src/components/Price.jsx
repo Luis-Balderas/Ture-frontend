@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setDataTotal } from '../redux/actions/reservationsActions';
 
 const Price = (props) => {
-  const { price, value, events } = props;
+  const { price, value } = props;
   const getValues = (price) => {
     if (price) {
       const percentage = 0.1;
@@ -28,7 +28,6 @@ const Price = (props) => {
     props.setDataTotal(total);
   }, [total]);
 
-  console.log(('props', props));
   return (
     <>
       <div className='payment__details--price'>

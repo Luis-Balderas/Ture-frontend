@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
+  const { children } = props;
   return (
     <>
-      <Header/>
+      <Header />
       {children}
       <Footer />
     </>
