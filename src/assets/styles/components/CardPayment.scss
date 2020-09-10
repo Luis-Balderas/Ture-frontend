@@ -1,8 +1,9 @@
 @import '../vars';
 
 .payment {
-  background-color: $color-gray;
-  border: 1px solid $color-black;
+  background-color: rgb(230, 230, 230);
+  border: 1px solid $color-gray;
+  box-shadow: 5px 5px 10px #d9d9d9;
   border-radius: 20px;
   margin-right: 150px;
   width: 100%;
@@ -95,6 +96,19 @@
 
   &__details {
     padding: 10px;
+
+    .isReservation {
+      text-align: center;
+
+      .item {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--gray);
+
+        .bold {
+          font-weight: 700;
+        }
+      }
+    }
 
     &--price {
       display: flex;

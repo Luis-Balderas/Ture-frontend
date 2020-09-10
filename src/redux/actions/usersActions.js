@@ -1,9 +1,9 @@
-// eslint-disable-next-line import/prefer-default-export
+const URL_API = 'https://ture-api-db.vercel.app/api';
+
 export const getAllUsers = () => async (dispatch) => {
   try {
-    const response = await fetch('http://localhost:3000/user/');
+    const response = await fetch(`${URL_API}/user`);
     const data = await response.json();
-    console.log('dataUser -> data', data);
     dispatch({
       type: 'DATA_ALL_USER',
       payload: data.body,
@@ -15,9 +15,9 @@ export const getAllUsers = () => async (dispatch) => {
 
 export const getUser = (email, password) => async (dispatch) => {
   try {
-    const response = await fetch('http://localhost:3000/user/');
+    const response = await fetch(`${URL_API}/user`);
     const data = await response.json();
-    console.log('dataUser -> data', data);
+    console.log('getUser -> data', data);
     dispatch({
       type: 'DATA_USER',
       payload: { email, password },
@@ -29,7 +29,7 @@ export const getUser = (email, password) => async (dispatch) => {
 
 export const setUser = (user) => async (dispatch) => {
   try {
-    const response = await fetch('http://localhost:3000/user/');
+    const response = await fetch(`${URL_API}/user`);
     const data = await response.json();
     console.log('dataUser -> data', data);
     dispatch({
