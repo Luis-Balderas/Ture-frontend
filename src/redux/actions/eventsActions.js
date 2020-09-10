@@ -1,6 +1,8 @@
+const URL_API = 'https://ture-api-db.vercel.app/api';
+
 export const getAllEvents = () => async (dispatch) => {
   try {
-    const response = await fetch('http://localhost:3000/api/events');
+    const response = await fetch(`${URL_API}/events`);
 
     const data = await response.json();
     dispatch({
@@ -14,7 +16,7 @@ export const getAllEvents = () => async (dispatch) => {
 
 export const getEventById = (id) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/events/${id.id}`);
+    const response = await fetch(`${URL_API}/events/${id.id}`);
     const data = await response.json();
     dispatch({
       type: 'EVENT_BY_ID',
@@ -27,7 +29,7 @@ export const getEventById = (id) => async (dispatch) => {
 
 export const filterEventByName = (name) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:3000/event/search/?name=${name}`);
+    const response = await fetch(`${URL_API}/event/search/?name=${name}`);
     const data = await response.json();
     dispatch({
       type: 'EVENT_BY_NAME',
@@ -40,7 +42,7 @@ export const filterEventByName = (name) => async (dispatch) => {
 
 export const filterEventByDates = (startDate, endDate) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:3000/event/search/?startDate=${startDate}&endDate=${endDate}`);
+    const response = await fetch(`${URL_API}/event/search/?startDate=${startDate}&endDate=${endDate}`);
     const data = await response.json();
     dispatch({
       type: 'EVENT_BY_DATES',
@@ -53,7 +55,7 @@ export const filterEventByDates = (startDate, endDate) => async (dispatch) => {
 
 export const filterEventByLocation = (location) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:3000/event/search/?location=${location}`);
+    const response = await fetch(`${URL_API}/event/search/?location=${location}`);
     const data = await response.json();
     dispatch({
       type: 'EVENT_BY_LOCATION',
