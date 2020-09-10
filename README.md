@@ -2,11 +2,6 @@
 
 Sistema Booking para el servicio de turismo enfocado en experiencias y eventos.
 
-<<<<<<< HEAD
-=======
-[TOC]
-
->>>>>>> 417fe6adbaa8efe524b363641986cbead3be94b9
 ### Pre-requisitos 📋
 Para instalar el software se debe disponer de:
 * Entorno de ejecución para JavaScript [NodeJs](https://nodejs.org/es/).
