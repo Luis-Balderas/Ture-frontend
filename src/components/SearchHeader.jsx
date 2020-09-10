@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import { filterEventByDates, filterEventByName, filterEventByLocation, getAllEvents } from '../redux/actions/eventsActions';
 import searchIcon from '../assets/img/search-icon.svg';
 
 const Search = (props) => {
+  const { dataEvents } = props;
   const today = '2020-09-09';
   const future = '2020-09-24';
   const [search, setSearch] = useState({
@@ -17,6 +20,26 @@ const Search = (props) => {
     props.history.push('/events');
 
   };
+
+  const getEvents = async () => {
+    try {
+      if (search.seeker) {
+        await props.filterEventByName(search.seeker);
+      } else {
+        await props.getAllEvents;
+      }
+
+    } catch (error) {
+      console.error(`En getEvents ocurrió este error ${error}`);
+    }
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, [dataEvents.lenght]);
+  if (!dataEvents) {
+    return '';
+  }
 
   return (
     <form
@@ -82,4 +105,13 @@ const Search = (props) => {
   );
 };
 
-export default withRouter(Search);
+const mapStateToProps = ({ eventsReducer }) => eventsReducer;
+
+const mapDispatchToProps = {
+  filterEventByDates,
+  filterEventByName,
+  filterEventByLocation,
+  getAllEvents,
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

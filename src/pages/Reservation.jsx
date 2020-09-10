@@ -3,9 +3,9 @@ import '../assets/styles/pages/Reservation.scss';
 import CardPayment from '../components/CardPayment';
 import PayForm from '../components/PayForm';
 
-const Reservation = () => (
+const Reservation = (props) => (
   <div className='Reservation'>
-    <PayForm />
+    <PayForm props={props} />
     <CardPayment />
   </div>
 );

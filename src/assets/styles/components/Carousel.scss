@@ -1,8 +1,54 @@
-.carousel{
-  height: 50vh;
-  width: 100%;
+::-webkit-scrollbar {
+  width: 0;
 }
 
-.carousel img{
-  height: 50vh;
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+// ::-webkit-scrollbar-thumb {
+//   background: #f0e3e3;
+//   border: 0.5px solid #f0dbdb;
+//   border-radius: 5px;
+// }
+
+
+
+.carousel {
+  width: 100%;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track:hover,
+  &::-webkit-scrollbar-track:active {
+    background: rgb(253, 234, 234);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 2px 0 10px rgb(247, 177, 177);
+  }
+
+  &__items {
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+
+    @media screen and (max-width:768px) {
+      width: 80%;
+    }
+
+    img {
+      margin: 10px;
+      border-radius: 20px;
+    }
+  }
 }
