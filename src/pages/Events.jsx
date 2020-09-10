@@ -1,11 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import CardsList from '../components/CardsList';
 import Mapita from '../components/Mapita';
 
 import '../assets/styles/pages/Events.scss';
 
-const Events = () => {
+const Events = (props) => {
+
+  console.log(props);
+
   const data = [
     {
       id: 1,
@@ -86,4 +90,7 @@ const Events = () => {
   );
 };
 
-export default Events;
+const mapStateToProps = (reducers) => {
+  return reducers.eventsReducer;
+};
+export default connect(mapStateToProps, {})(Events);
