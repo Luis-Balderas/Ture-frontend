@@ -2,7 +2,7 @@ const URL_API = 'https://ture-api-db.vercel.app/api';
 
 export const getAllEvents = () => async (dispatch) => {
   try {
-    const response = await fetch(`${URL_API}/events`);
+    const response = await fetch(`${URL_API}/events/  `);
 
     const data = await response.json();
     dispatch({
@@ -11,6 +11,19 @@ export const getAllEvents = () => async (dispatch) => {
     });
   } catch (err) {
     console.log('getAllUsers -> err', err);
+  }
+};
+
+export const getEventsRecents = () => async (dispatch) => {
+  try {
+    const response = await fetch(`${URL_API}/events/recents`);
+    const data = await response.json();
+    dispatch({
+      type: 'EVENTS_RECENTS',
+      payload: data.data,
+    });
+  } catch (err) {
+    console.log('getEventById -> err', err);
   }
 };
 
@@ -31,6 +44,7 @@ export const filterEventByName = (name) => async (dispatch) => {
   try {
     const response = await fetch(`${URL_API}/events/search/?name=${name}`);
     const data = await response.json();
+    console.log('filterEventByName -> data', data);
     dispatch({
       type: 'EVENT_BY_NAME',
       payload: data.data,

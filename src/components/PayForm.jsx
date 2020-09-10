@@ -21,18 +21,19 @@ const PayForm = (props) => {
   const handleClick = (event) => {
     event.preventDefault();
     if (value.country) {
-      events.isReservation = false;
       props.setDataForm(value);
+      alert(`${value.firstName} gracias por tu compra \n Vuelve pronto.`);
+      events.isReservation = false;
       props.history.push('/');
     }
   };
 
   const handleClickCancel = (event) => {
     event.preventDefault();
+    alert('Cancelaste tu reserva.Vuelve pronto.');
     events.isReservation = false;
     props.props.history.push('/');
   };
-  console.log(props);
   return (
     <section className='Reservation__PayForm'>
       <span>
@@ -96,16 +97,14 @@ const PayForm = (props) => {
             <strong>Pago fraccionado</strong>
           </label>
           <p>
-            Paga $253,200 Ahora y el resto($168,800) se te cobrará automáticamente a la misma forma de pago el 12 de dic de 2020, sin
-            tarifas adicionales
+            Paga ${total * 0.4} Ahora y el resto(${total * 0.6}) se te cobrará automáticamente a la misma forma de pago el 12 de dic de
+            2020, sin tarifas adicionales
           </p>
         </div>
       </form>
       <div className='Reservation__PayForm--button'>
         <Button data='Cancelar' onClick={handleClickCancel} />
-        <button type='button' onClick={handleClick}>
-          <strong>Confirmar</strong>
-        </button>
+        <Button data='Confirmar' onClick={handleClick} />
       </div>
     </section>
   );

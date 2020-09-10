@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/Luis-Balderas/Ture-frontend.git"
   },
@@ -29,8 +29,6 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.19.26",
-    "@reduxjs/toolkit": "^1.4.0",
     "bootstrap": "^4.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

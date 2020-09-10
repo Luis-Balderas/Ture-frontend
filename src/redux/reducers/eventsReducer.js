@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   error: null,
   loading: false,
   dataEvents: '',
-  eventByName: '',
+  eventsRecents: '',
   isReservation: false,
 };
 
@@ -12,6 +12,13 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         dataEvents: action.payload,
+        loading: false,
+        error: null,
+      };
+    case 'EVENTS_RECENTS':
+      return {
+        ...state,
+        eventsRecents: action.payload,
         loading: false,
         error: null,
       };

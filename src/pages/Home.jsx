@@ -2,40 +2,33 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/pages/Home.scss';
 import CardBasic from '../components/CardBasic';
-import { getAllEvents } from '../redux/actions/eventsActions';
+import { getAllEvents, getEventsRecents } from '../redux/actions/eventsActions';
 
 const Home = (props) => {
-  const { dataEvents } = props;
+  const { dataEvents, eventsRecents } = props;
+
   const getEvents = async () => {
     await props.getAllEvents();
+    await props.getEventsRecents();
   };
 
   useEffect(() => {
     getEvents();
-  }, [dataEvents.length]);
-  if (!dataEvents) {
+  }, [dataEvents.lenght]);
+  if (!dataEvents || !eventsRecents) {
     return '';
   }
-
+  console.log('Home -> props', props);
   return (
     <div className='Home'>
       <section className='mainTitle'>
-        <h1>Estas son algunas de nuestras próximas experiencias</h1>
+        <h1>Estas son algunas de nuestras experiencias</h1>
       </section>
       <section>
         <div className='nextEvents'>
-          {dataEvents.map((event, index) => {
-            if (index >= 3) {
-              return false;
-            }
-            return (
-              <div>
-                <div>
-                  <CardBasic data={event} key={`${event._id}cc`} />
-                </div>
-              </div>
-            );
-          })}
+          {dataEvents.map((event, index) => (
+            <>{index >= 3 ? null : <CardBasic data={event} key={event.id} />}</>
+          ))}
         </div>
       </section>
 
@@ -46,44 +39,13 @@ const Home = (props) => {
             calificadas.
           </h4>
           <div className='mainCategory-card'>
-            {dataEvents.map((event, index) => {
-              if (index === 5) {
-                return <CardBasic data={event} key={event._id} />;
-              }
-              return false;
-
-            })}
+            <CardBasic data={eventsRecents[0]} key={eventsRecents[0]._id} />;
           </div>
         </div>
         <div className='otherCategories'>
-          <div>
-            {dataEvents.map((event, index) => {
-              if (index === 0) {
-                return <CardBasic data={event} key={event._id + 3} />;
-              }
-            })}
-          </div>
-          <div>
-            {dataEvents.map((event, index) => {
-              if (index === 1) {
-                return <CardBasic data={event} key={event._id + 4} />;
-              }
-            })}
-          </div>
-          <div>
-            {dataEvents.map((event, index) => {
-              if (index === 2) {
-                return <CardBasic data={event} key={event._id + 5} />;
-              }
-            })}
-          </div>
-          <div>
-            {dataEvents.map((event, index) => {
-              if (index === 3) {
-                return <CardBasic data={event} key={event._id + 6} />;
-              }
-            })}
-          </div>
+          {eventsRecents.map((event, index) => (
+            <CardBasic data={event} key={event._id} />
+          ))}
         </div>
       </section>
     </div>
@@ -94,5 +56,6 @@ const mapStateToProps = ({ eventsReducer }) => eventsReducer;
 
 const mapDispatchToProps = {
   getAllEvents,
+  getEventsRecents,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
