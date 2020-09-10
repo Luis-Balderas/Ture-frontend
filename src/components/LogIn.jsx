@@ -49,8 +49,9 @@ const LogIn = (props) => {
             <a href='olvide.com'>Olvidé mi contraseña</a>
           </div>
         </div>
+      </div>
 
-        {/* <div className="login__social">
+      {/* <div className="login__social">
           <div className="login__social--item">
             <figure><img src={googleIcon} alt=""/></figure>
             <p>Iniciar sesión con Gmail</p>
@@ -61,10 +62,9 @@ const LogIn = (props) => {
           </div>
         </div> */}
 
-        <div className='login__signup'>
-          <p>¿No tienes cuenta?</p>
-          {/* <Link to='/register'>Registrarse</Link> */}
-        </div>
+      <div className='login__signup'>
+        <p>¿No tienes cuenta?</p>
+        {/* <Link to='/register'>Registrarse</Link> */}
       </div>
     </Modal>
   );

@@ -6,10 +6,9 @@
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  border-top: 2px solid get-opacity($color-black, 0.3);
+  box-shadow: inset 1px 1px 3px $color-black;
   height: 70px;
-  background-color: $background-footer;
-
+  background-color: $color-background;
   ul {
     margin: 0;
     padding-left: 0;
@@ -23,11 +22,13 @@
       a {
         text-decoration: none;
         color: $color-black;
+        font-weight: 600;
       }
     }
   }
 
   p {
     margin: 0;
+    font-weight: 600;
   }
 }

@@ -47,7 +47,7 @@
     height: 40px;
     // padding: 5px;
     display: grid;
-    grid-template-columns: 45% 45% 10%;
+    grid-template-columns: 30% 30% 30% 10%;
     align-items: center;
     background: get-opacity($color-black, 0.03);
     border: 1px solid  get-opacity($color-black, 0.5);;
@@ -55,41 +55,54 @@
     @media (max-width: 767px) {
       grid-area: search ;
     }
+
+    &--button:focus {
+      outline: none;
+    }
+
+    &--button {
+      border: none;
+      background: none;
+      width: fit-content;
+    }
+
     & img {
       width: 25px;
       height: 25px;
       cursor: pointer;
     }
+
     &:hover {
       border-color: $color-main;
     }
 
     &--input {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
       border: none;
-      & input {
-        border: none;
-        width: 100%;
-        padding: 5px;
-        background: get-opacity($color-black, 0);
-        &:focus {
-          outline: 0 none;
-        }
-      }
+      width: 100%;
+      padding: 5px;
+      padding-left: 30px;
+      background: get-opacity($color-black, 0);
+    }
+
+    &--input:focus,
+    &--date:focus,
+    &--dateEnd:focus {
+      outline: none;
     }
 
     &--date {
-      & input {
-        width: 60%;
-        border: none;
-        background: get-opacity($color-black, 0);
-        cursor: pointer;
-        &:focus {
-          outline: 0 none;
-        }
-      }
+      width: 86%;
+      border: none;
+      background: get-opacity($color-black, 0);
+      cursor: pointer;
+    }
+
+    &--dateEnd {
+      width: 86%;
+      border: none;
+      background: get-opacity($color-black, 0);
+      cursor: pointer;
+      grid-column: 3 / 4;
     }
   }
 
@@ -100,7 +113,7 @@
     @media (max-width: 767px) {
       grid-area: buttons;
     }
-    
+
     & button {
       @media (max-width: 767px) {
         width: 150px;

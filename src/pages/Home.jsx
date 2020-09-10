@@ -12,7 +12,7 @@ const Home = (props) => {
 
   useEffect(() => {
     getEvents();
-  }, [dataEvents.lenght]);
+  }, [dataEvents.length]);
   if (!dataEvents) {
     return '';
   }
@@ -49,9 +49,9 @@ const Home = (props) => {
             {dataEvents.map((event, index) => {
               if (index === 5) {
                 return <CardBasic data={event} key={event._id} />;
-              } else {
-                return false;
               }
+              return false;
+
             })}
           </div>
         </div>

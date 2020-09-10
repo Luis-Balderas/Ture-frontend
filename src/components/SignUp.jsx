@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import Modal from './Modal.jsx'
 
 import '../assets/styles/components/Login.scss';
-import googleIcon from '../assets/img/googleicon.svg';
-import facebookIcon from '../assets/img/facebookicon.svg';
+import googleIcon from '../assets/img/googleIcon.svg';
+import facebookIcon from '../assets/img/facebookIcon.svg';
 
 const SignUp = (props) => {
 
@@ -18,32 +18,32 @@ const SignUp = (props) => {
 
   return <Modal isOpen={props.isOpen} isClose={modalIsClose}>
     <div className="login">
-        <button onClick={handleCloseModal}><strong>X</strong></button>
-        <div className="login__form">
-          <form>
-            <input type="text" name="" id="" placeholder="Nombre" />
-            <input type="email" name="" id="" placeholder="Email" />
-            <input type="password" name="" id="" placeholder="Contraseña" />
-          </form>
-        </div>
+      <button onClick={handleCloseModal}><strong>X</strong></button>
+      <div className="login__form">
+        <form>
+          <input type="text" name="" id="" placeholder="Nombre" />
+          <input type="email" name="" id="" placeholder="Email" />
+          <input type="password" name="" id="" placeholder="Contraseña" />
+        </form>
+      </div>
 
-        <div className="login__button">
-          <button>
-            Registrarse
+      <div className="login__button">
+        <button>
+          Registrarse
           </button>
-        </div>
+      </div>
 
-        <div className="login__remember">
-          <div className="container-Recuerdame">
-            <input type="checkbox" name="" id="" />
-            <label>Recuérdame</label>
-          </div>
-          <div className="container-Registro">
-            <a href="">Olvidé mi contraseña</a>
-          </div>
+      <div className="login__remember">
+        <div className="container-Recuerdame">
+          <input type="checkbox" name="" id="" />
+          <label>Recuérdame</label>
         </div>
+        <div className="container-Registro">
+          <a href="">Olvidé mi contraseña</a>
+        </div>
+      </div>
 
-        {/* <div className="login__social">
+      {/* <div className="login__social">
           <div className="login__social--item">
             <figure><img src={googleIcon} alt="" /></figure>
             <p>Iniciar sesión con Gmail</p>
@@ -54,10 +54,10 @@ const SignUp = (props) => {
           </div>
         </div> */}
 
-        <div className="login__signup">
-          <p>¿Ya Estas Registrado?</p>
-          <a href="">Iniciar Sesión</a>
-        </div>
+      <div className="login__signup">
+        <p>¿Ya Estas Registrado?</p>
+        <a href="">Iniciar Sesión</a>
+      </div>
     </div>
   </Modal>
 };
