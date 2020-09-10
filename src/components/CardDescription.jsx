@@ -2,6 +2,9 @@ import React from 'react';
 import '../assets/styles/components/CardDescription.scss';
 
 const CardDescription = ({ data }) => {
+  const formattedDate = (date) => {
+    return date.slice(0, 10);
+  };
   return (
     <section className='description'>
       <div className='description__head'>
@@ -12,7 +15,7 @@ const CardDescription = ({ data }) => {
         <div className='description__head--date'>
           <h5>Fecha:</h5>
           <span>
-            {data.startDate} - {data.endDate}
+            {formattedDate(data.startDate)} - {formattedDate(data.endDate)}
           </span>
         </div>
       </div>
