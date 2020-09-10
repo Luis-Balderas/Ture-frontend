@@ -6,7 +6,6 @@ import { filterEventByDates, filterEventByName, filterEventByLocation, getAllEve
 import searchIcon from '../assets/img/search-icon.svg';
 
 const Search = (props) => {
-  const { dataEvents } = props;
   const today = '2020-09-09';
   const future = '2020-09-24';
   const [search, setSearch] = useState({
@@ -15,31 +14,24 @@ const Search = (props) => {
     dateEnd: '',
   });
 
-  const handleClick = () => {
-
-    props.history.push('/events');
-
-  };
-
   const getEvents = async () => {
-    try {
-      if (search.seeker) {
-        await props.filterEventByName(search.seeker);
-      } else {
-        await props.getAllEvents;
-      }
-
-    } catch (error) {
-      console.error(`En getEvents ocurrió este error ${error}`);
+    if (search.seeker.length > 5) {
+      await props.filterEventByName(search.seeker);
+    } else {
+      await props.filterEventByName('Festival');
     }
   };
 
   useEffect(() => {
     getEvents();
-  }, [dataEvents.lenght]);
-  if (!dataEvents) {
-    return '';
-  }
+
+  }, []);
+
+  const handleClick = () => {
+
+    props.history.push('/events');
+
+  };
 
   return (
     <form

@@ -1,14 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import CardOption from './CardOption';
 
 const CardsList = (props) => {
-  const { data } = props;
-
+  const { eventByName } = props;
+  console.log(props);
   return (
     <>
       <ul className='list-events'>
-        {data.map((item) => {
+        {eventByName.map((item) => {
           return (
             <li key={item.id}>
               <CardOption item={item} />
@@ -20,4 +21,7 @@ const CardsList = (props) => {
   );
 };
 
-export default CardsList;
+const mapStateToProps = (reducers) => {
+  return reducers.eventsReducer;
+};
+export default connect(mapStateToProps, {})(CardsList);
