@@ -1,46 +1,49 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
-import Modal from './Modal.jsx'
-
+import { connect } from 'react-redux';
 import '../assets/styles/components/Login.scss';
-import googleIcon from '../assets/img/googleicon.svg';
-import facebookIcon from '../assets/img/facebookicon.svg';
+import { setUser } from '../redux/actions/usersActions';
+import Button from './Button';
+import Modal from './Modal';
 
 const SignUp = (props) => {
-
   const [modalIsClose, setModalIsClose] = useState(false);
+  const [value, setValues] = useState('');
+  const { isOpen } = props;
 
-  const handleCloseModal = e => {
-    setModalIsClose(true)
+  const handleCloseModal = (e) => {
+    setModalIsClose(true);
     // console.log(modalIsOpen)
-  }
+  };
 
-  return <Modal isOpen={props.isOpen} isClose={modalIsClose}>
-    <div className="login">
-        <button onClick={handleCloseModal}><strong>X</strong></button>
-        <div className="login__form">
-          <form>
-            <input type="text" name="" id="" placeholder="Nombre" />
-            <input type="email" name="" id="" placeholder="Email" />
-            <input type="password" name="" id="" placeholder="Contraseña" />
+  const handleChange = (e) => {
+    setValues({ ...value, [e.target.name]: e.target.value });
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    props.setUser(value);
+    handleCloseModal();
+  };
+
+  return (
+    <Modal isOpen={isOpen} isClose={modalIsClose}>
+      <div className='login'>
+        <Button data='X' onClick={handleCloseModal} />
+        <div className='login__form'>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input type='text' name='name' value={value.name} placeholder='Nombre' onChange={(e) => handleChange(e)} />
+            <input type='email' name='email' value={value.email} placeholder='Email' onChange={(e) => handleChange(e)} />
+            <input type='password' name='password' value={value.password} placeholder='Contraseña' onChange={(e) => handleChange(e)} />
+            <Button data='Registrarse' onClick={handleClick} />
           </form>
         </div>
 
-        <div className="login__button">
-          <button>
-            Registrarse
-          </button>
-        </div>
-
-        <div className="login__remember">
-          <div className="container-Recuerdame">
-            <input type="checkbox" name="" id="" />
-            <label>Recuérdame</label>
+        <div className='login__remember'>
+          <div className='container-Recuerdame'>
+            <input type='checkbox' name='' id='' />
+            <label htmlFor>Recuérdame</label>
           </div>
-          <div className="container-Registro">
-            <a href="">Olvidé mi contraseña</a>
-          </div>
+          <div className='container-Registro'>{/* <a href=''>Olvidé mi contraseña</a> */}</div>
         </div>
 
         {/* <div className="login__social">
@@ -54,12 +57,18 @@ const SignUp = (props) => {
           </div>
         </div> */}
 
-        <div className="login__signup">
+        <div className='login__signup'>
           <p>¿Ya Estas Registrado?</p>
-          <a href="">Iniciar Sesión</a>
+          {/* <a href=''>Iniciar Sesión</a> */}
         </div>
-    </div>
-  </Modal>
+      </div>
+    </Modal>
+  );
 };
 
-export default SignUp;
+const mapStateToProps = ({ usersReducer }) => usersReducer;
+const mapDispatchToProps = {
+  setUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

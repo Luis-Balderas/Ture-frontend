@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import '../assets/styles/components/Login.scss';
 import { getUser } from '../redux/actions/usersActions';
 import Button from './Button';
@@ -7,7 +8,7 @@ import Modal from './Modal';
 
 const LogIn = (props) => {
   const [modalIsClose, setModalIsClose] = useState(false);
-  const [form, setValues] = useState();
+  const [form, setValues] = useState('');
   const { isOpen } = props;
   // const { dataUser } = props;
 
@@ -17,6 +18,8 @@ const LogIn = (props) => {
 
   const handleClick = (event) => {
     event.preventDefault();
+    console.log('handleClick -> form', form);
+    setModalIsClose(true);
     props.getUser(form);
     // props.history.push('/');
   };
@@ -24,15 +27,31 @@ const LogIn = (props) => {
   const handleCloseModal = (e) => {
     setModalIsClose(true);
   };
-
+  console.log(props);
   return (
     <Modal isOpen={isOpen} isClose={modalIsClose}>
       <div className='login'>
         <Button data='X' onClick={handleCloseModal} />
         <div className='login__form'>
           <form>
-            <input aria-label='email' type='email' name='email' id='' placeholder='Email' onChange={handleInput} />
-            <input aria-label='password' type='password' name='password' id='' placeholder='Contraseña' onChange={handleInput} />
+            <input
+              aria-label='email'
+              type='email'
+              name='email'
+              id=''
+              placeholder='Email'
+              onChange={(e) => handleInput(e)}
+              value={form.email}
+            />
+            <input
+              aria-label='password'
+              type='password'
+              name='password'
+              id=''
+              placeholder='Contraseña'
+              value={form.password}
+              onChange={(e) => handleInput(e)}
+            />
           </form>
         </div>
 
@@ -74,4 +93,4 @@ const mapToStateToProps = ({ usersReducer }) => usersReducer;
 const mapDispatchToProps = {
   getUser,
 };
-export default connect(mapToStateToProps, mapDispatchToProps)(LogIn);
+export default withRouter(connect(mapToStateToProps, mapDispatchToProps)(LogIn));
