@@ -14,6 +14,19 @@ export const getAllEvents = () => async (dispatch) => {
   }
 };
 
+export const getEventsRecents = () => async (dispatch) => {
+  try {
+    const response = await fetch(`${URL_API}/events/recents`);
+    const data = await response.json();
+    dispatch({
+      type: 'EVENTS_RECENTS',
+      payload: data.data,
+    });
+  } catch (err) {
+    console.log('getEventById -> err', err);
+  }
+};
+
 export const getEventById = (id) => async (dispatch) => {
   try {
     const response = await fetch(`${URL_API}/events/${id.id}`);
@@ -29,11 +42,12 @@ export const getEventById = (id) => async (dispatch) => {
 
 export const filterEventByName = (name) => async (dispatch) => {
   try {
-    const response = await fetch(`${URL_API}/event/search/?name=${name}`);
+    const response = await fetch(`${URL_API}/events/search/?name=${name}`);
     const data = await response.json();
+    console.log('filterEventByName -> data', data);
     dispatch({
       type: 'EVENT_BY_NAME',
-      payload: data.body,
+      payload: data.data,
     });
   } catch (err) {
     console.log('filterEvents -> err', err);
@@ -42,11 +56,11 @@ export const filterEventByName = (name) => async (dispatch) => {
 
 export const filterEventByDates = (startDate, endDate) => async (dispatch) => {
   try {
-    const response = await fetch(`${URL_API}/event/search/?startDate=${startDate}&endDate=${endDate}`);
+    const response = await fetch(`${URL_API}/events/search/?startDate=${startDate}&endDate=${endDate}`);
     const data = await response.json();
     dispatch({
       type: 'EVENT_BY_DATES',
-      payload: data.body,
+      payload: data.data,
     });
   } catch (err) {
     console.log('filterEvents -> err', err);
@@ -55,11 +69,11 @@ export const filterEventByDates = (startDate, endDate) => async (dispatch) => {
 
 export const filterEventByLocation = (location) => async (dispatch) => {
   try {
-    const response = await fetch(`${URL_API}/event/search/?location=${location}`);
+    const response = await fetch(`${URL_API}/events/search/?location=${location}`);
     const data = await response.json();
     dispatch({
       type: 'EVENT_BY_LOCATION',
-      payload: data.body,
+      payload: data.data,
     });
   } catch (err) {
     console.log('filterEvents -> err', err);

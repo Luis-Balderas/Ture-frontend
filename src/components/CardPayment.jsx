@@ -94,7 +94,7 @@ const CardPayment = (props) => {
           {events.isReservation ? (
             <div className='isReservation'>
               <div className='item'>
-                <p className='bold'>Reserve esto ahora por ${reservation.event.value * eventById.price * 0.4}</p>
+                <p className='bold'>Reserve esto ahora por ${reservation.total * 0.4}</p>
                 <p>Page el resto el 12 de diciembre</p>
               </div>
               <div className='item'>

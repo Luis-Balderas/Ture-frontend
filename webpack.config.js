@@ -42,7 +42,7 @@ module.exports = {
         ],
       },
       {
-        test: /.(png|gif|jpg|svg)$/,
+        test: /.(png|gif|jpg|svg|ico)$/,
         use: [
           {
             loader: 'file-loader',
@@ -61,6 +61,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
+      favicon: './public/favicon.png',
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css',
