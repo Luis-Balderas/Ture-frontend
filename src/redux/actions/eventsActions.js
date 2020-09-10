@@ -2,7 +2,7 @@ const URL_API = 'https://ture-api-db.vercel.app/api';
 
 export const getAllEvents = () => async (dispatch) => {
   try {
-    const response = await fetch(`${URL_API}/events/`);
+    const response = await fetch(`${URL_API}/events/  `);
 
     const data = await response.json();
     dispatch({
