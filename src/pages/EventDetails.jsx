@@ -42,9 +42,9 @@ const EventDetails = (props) => {
   );
 };
 
-const mapToStateToProps = ({ eventsReducer }) => eventsReducer;
+const mapStateToProps = ({ eventsReducer }) => eventsReducer;
 const mapDispatchToProps = {
   getEventById,
 };
 
-export default connect(mapToStateToProps, mapDispatchToProps)(EventDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(EventDetails);

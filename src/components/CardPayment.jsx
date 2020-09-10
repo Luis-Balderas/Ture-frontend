@@ -103,7 +103,7 @@ const CardPayment = (props) => {
   );
 };
 
-const mapToStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     events: state.eventsReducer,
     reservation: state.reservationsReducer,
@@ -114,4 +114,4 @@ const mapDispatchToProps = {
   setDataEvent,
 };
 
-export default connect(mapToStateToProps, mapDispatchToProps)(CardPayment);
+export default connect(mapStateToProps, mapDispatchToProps)(CardPayment);
