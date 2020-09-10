@@ -25,7 +25,7 @@ const Home = (props) => {
       <section>
         <div className='nextEvents'>
           {dataEvents.map((event, index) => {
-            if (index === 3) {
+            if (index >= 3) {
               return false;
             }
             return (
@@ -42,15 +42,16 @@ const Home = (props) => {
       <section className='Categories'>
         <div className='mainCategory'>
           <h4>
-            Tenemos un gran catalogo de numeras aventuras para que vivas al maximo cada segundo de tu vida, prueba con las mejor
+            Tenemos un gran catalogo de numerosas aventuras para que vivas al maximo cada segundo de tu vida, prueba con las mejor
             calificadas.
           </h4>
           <div className='mainCategory-card'>
             {dataEvents.map((event, index) => {
-              if (index < 3) {
+              if (index === 5) {
+                return <CardBasic data={event} key={event._id} />;
+              } else {
                 return false;
               }
-              return <CardBasic data={event} key={event._id + 1} />;
             })}
           </div>
         </div>
