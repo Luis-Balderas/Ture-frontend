@@ -27,7 +27,6 @@ const LogIn = (props) => {
   const handleCloseModal = (e) => {
     setModalIsClose(true);
   };
-  console.log(props);
   return (
     <Modal isOpen={isOpen} isClose={modalIsClose}>
       <div className='login'>

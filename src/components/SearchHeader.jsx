@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -14,21 +14,12 @@ const Search = (props) => {
     dateEnd: '',
   });
 
-  const getEvents = async () => {
-    if (search.seeker.length > 5) {
-      await props.filterEventByName(search.seeker);
-    } else {
-      await props.filterEventByName('Festival');
-    }
-  };
+  const keyName = search.seeker;
 
-  useEffect(() => {
-    getEvents();
+  const handleClick = async () => {
 
-  }, []);
-
-  const handleClick = () => {
-
+    await props.filterEventByName(keyName);
+    console.log(keyName);
     props.history.push('/events');
 
   };
