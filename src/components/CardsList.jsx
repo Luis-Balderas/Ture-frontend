@@ -5,7 +5,6 @@ import CardOption from './CardOption';
 
 const CardsList = (props) => {
   const { eventByName } = props;
-  console.log(props);
   return (
     <>
       <ul className='list-events'>

@@ -9,8 +9,8 @@ export const getAllEvents = () => async (dispatch) => {
       type: 'DATA_EVENTS',
       payload: data.data,
     });
-  } catch (err) {
-    console.log('getAllUsers -> err', err);
+  } catch (error) {
+    console.error('getAllUsers -> err', error);
   }
 };
 
@@ -44,7 +44,6 @@ export const filterEventByName = (name) => async (dispatch) => {
   try {
     const response = await fetch(`${URL_API}/events/search/?name=${name}`);
     const data = await response.json();
-    console.log('filterEventByName -> data', data);
     dispatch({
       type: 'EVENT_BY_NAME',
       payload: data.data,

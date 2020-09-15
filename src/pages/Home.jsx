@@ -18,7 +18,6 @@ const Home = (props) => {
   if (!dataEvents || !eventsRecents) {
     return '';
   }
-  console.log('Home -> props', props);
   return (
     <div className='Home'>
       <section className='mainTitle'>
